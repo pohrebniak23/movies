@@ -4,9 +4,9 @@ export const filmsApi = createApi({
   reducerPath: 'filmsApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://api.kinopoisk.dev' }),
   endpoints: (builder) => ({
-    getLatestFilms: builder.query<any, any>({
-      query: () => ({
-        url: `/movie?field=rating.kp&search=5-10&field=year&search=2022&token=${process.env.REACT_APP_TOKEN}`
+    getLatestContent: builder.query<any, any>({
+      query: ({type, limit}) => ({
+        url: `/movie?field=rating.kp&search=5-10&field=type&search=${type}&field=year&search=${new Date().getFullYear()}&limit=${limit}&token=${process.env.REACT_APP_TOKEN}`
       })
     }),
     getFilmById: builder.query<any, any>({

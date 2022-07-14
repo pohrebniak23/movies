@@ -1,16 +1,23 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Film } from "../../pages/Film/Film";
+import { PublicRoute } from "../../routes";
+import { Login } from "./Login";
+import { Films } from "../../pages/Films/Films";
+import { SingleFilm } from "../../pages/SingleFilm/SingleFilm";
 import { Home } from "../../pages/Home/Home";
 import { NotFound } from "../../pages/NotFound/NotFound";
-import { PrivateRoute, PublicRoute } from "../../routes";
-import { Login } from "./Login";
 
 export enum RouteNames {
   HOME = "/",
   LOGIN = "/login",
   FILMS = "/films",
-  FILMS_ITEM = "/films/:id"
+  FILMS_ITEM = "/films/:id",
+  SERIALS = "/serials",
+  SERIALS_ITEM = "/serials/:id",
+  CARTOONS = "/cartoons",
+  CARTOONS_ITEM = "/cartoons/:id",
+  ACCOUNT = "/account",
+  SETTINGS = "/settings"
 }
 
 export const AppRouter: React.FC = () => {
@@ -24,12 +31,26 @@ export const AppRouter: React.FC = () => {
       />
       <Route
         path={RouteNames.HOME}
-        element={<PrivateRoute component={Home} isAuth={isAuth} />}
+        element={<Home />}
+      />
+      <Route
+        path={RouteNames.FILMS}
+        element={<Films />}
       />
       <Route
         path={RouteNames.FILMS_ITEM}
-        element={<PrivateRoute component={Film} isAuth={isAuth} />}
+        element={<SingleFilm />}
       />
+
+
+      {/* <Route
+        path={RouteNames.ACCOUNT}
+        element={<PrivateRoute component={Account} isAuth={isAuth} />}
+      /> */}
+      {/* <Route
+        path={RouteNames.SETTINGS}
+        element={<PrivateRoute component={Settings} isAuth={isAuth} />}
+      /> */}
 
       <Route
         path="*"
