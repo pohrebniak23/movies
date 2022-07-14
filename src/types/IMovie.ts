@@ -1,20 +1,20 @@
-export interface ExternalId {
+export interface IExternalId {
   _id: string;
   imdb: string;
 }
 
-export interface Logo {
+export interface ILogo {
   _id: string;
   url?: any;
 }
 
-export interface Poster {
+export interface IPoster {
   _id: string;
   url: string;
   previewUrl: string;
 }
 
-export interface Rating {
+export interface IRating {
   _id: string;
   kp: number;
   imdb: number;
@@ -23,7 +23,7 @@ export interface Rating {
   await: number;
 }
 
-export interface Votes {
+export interface IVotes {
   _id: string;
   kp: number;
   imdb: number;
@@ -32,17 +32,17 @@ export interface Votes {
   await: number;
 }
 
-export interface Name {
+export interface IName {
   _id: string;
   name: string;
 }
 
 export interface IMovie {
-  externalId: ExternalId;
-  logo: Logo;
-  poster: Poster;
-  rating: Rating;
-  votes: Votes;
+  externalId: IExternalId;
+  logo: ILogo;
+  poster: IPoster;
+  rating: IRating;
+  votes: IVotes;
   id: number;
   type: string;
   name: string;
@@ -51,6 +51,6 @@ export interface IMovie {
   alternativeName: string;
   enName?: any;
   movieLength: number;
-  names: Name[];
+  names: IName[];
   shortDescription?: any;
 }

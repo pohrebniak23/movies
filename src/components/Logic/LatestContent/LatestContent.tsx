@@ -5,12 +5,12 @@ import { ListItems, MListItems } from "../ListItems/ListItems";
 import styles from "./LatestContent.module.sass";
 
 type Props = {
-  type: string;
+  category: string;
 };
 
-export const LatestContent: React.FC<Props> = ({ type }) => {
+export const LatestContent: React.FC<Props> = ({ category }) => {
   const [limit, setLimit] = useState(8);
-  const { data: movies } = filmsApi.useGetLatestContentQuery({ type, limit });
+  const { data: movies } = filmsApi.useGetLatestContentQuery({ category, limit });
 
   const { Container, Grid } = MListItems;
 

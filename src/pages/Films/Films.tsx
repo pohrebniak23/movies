@@ -1,7 +1,10 @@
 import React from 'react'
+import { CategoryList } from '../../components/Logic/CategoryList/CategoryList'
 
 export const Films: React.FC = () => {
   return (
-    <div>Films</div>
+    <div className="films">
+      <CategoryList category="movie" />
+    </div>
   )
 }

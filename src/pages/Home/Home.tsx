@@ -4,9 +4,9 @@ import { LatestContent } from "../../components/Logic/LatestContent/LatestConten
 export const Home: React.FC = () => {
   return (
     <>
-      <LatestContent type="movie" />
+      <LatestContent category="movie" />
 
-      <LatestContent type="tv-series" />
+      <LatestContent category="tv-series" />
     </>
   );
 };

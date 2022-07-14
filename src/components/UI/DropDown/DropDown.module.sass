@@ -1,0 +1,26 @@
+.dropDown
+  position: absolute
+  width: 180px
+  height: auto
+  display: flex
+  flex-direction: column
+  padding: 20px
+  right: 0
+  top: 100%
+  gap: 16px 0
+  background: var(--color-white)
+  opacity: 0
+  z-index: -1
+  transition: .4s
+  &Open
+    opacity: 1
+    z-index: 10
+
+.link
+  font-size: 16px
+  color: var(--color-bg)
+  text-decoration: none
+  display: flex
+  align-items: center
+  svg
+    margin-right: 6px

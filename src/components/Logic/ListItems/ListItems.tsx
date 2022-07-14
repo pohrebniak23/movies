@@ -25,7 +25,7 @@ module MListItems {
     cardsList: IMovie[] | undefined
   }
 
-  export const Grid: React.FC<Props> = ({ cardsList }) => {
+  export const Grid: React.FC<Props> = React.memo(({ cardsList }) => {
     return (
       <div className={styles.grid}>
         {cardsList?.map((card: IMovie) => (
@@ -35,7 +35,7 @@ module MListItems {
         ))}
       </div>
     )
-  }
+  });
 }
 
 export {MListItems};

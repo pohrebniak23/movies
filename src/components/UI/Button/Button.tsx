@@ -10,7 +10,7 @@ export interface IButton {
   onClick?: () => void;
 }
 
-export const Button: React.FC<PropsWithChildren<IButton>> = ({
+export const Button: React.FC<PropsWithChildren<IButton>> = React.memo(({
   children,
   classname,
   variant,
@@ -42,4 +42,4 @@ export const Button: React.FC<PropsWithChildren<IButton>> = ({
       {iconRight}
     </button>
   );
-};
+});
