@@ -25,8 +25,11 @@ export const Button: React.FC<PropsWithChildren<IButton>> = React.memo(({
         styles.button,
         variant === "stroke" && styles.stroke,
         variant === "outline" && styles.outline,
+        variant === "white" && styles.white,
         variant === "saved" && styles.saved,
-        variant === "notSaved" && styles.notSaved
+        variant === "notSaved" && styles.notSaved,
+        variant === "savedBlack" && styles.savedBlack,
+        variant === "notSavedBlack" && styles.notSavedBlack
       )}
       {...props}
     >

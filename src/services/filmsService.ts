@@ -11,7 +11,7 @@ export const filmsApi = createApi({
     }),
     getContentByCategory: builder.query<any, any>({
       query: ({category, year, rating, limit}) => ({
-        url: `/movie?field=rating.kp&search=${rating}&field=type&search=${category}&field=year&search=${year}&limit=${limit}&token=${process.env.REACT_APP_TOKEN}`
+        url: `/movie?field=rating.kp&search=${rating.min}-${rating.max}&field=type&search=${category}&field=year&search=${year.min}-${year.max}&limit=${limit}&token=${process.env.REACT_APP_TOKEN}`
       })
     }),
     getFilmById: builder.query<any, any>({

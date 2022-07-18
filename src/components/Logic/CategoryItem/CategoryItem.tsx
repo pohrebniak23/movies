@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { FcLike, FcLikePlaceholder } from "react-icons/fc";
+import { FcLike } from "react-icons/fc";
+import { BsCheck } from "react-icons/bs";
 import { IMovie } from "../../../types/IMovie";
 import { Button } from "../../UI/Button/Button";
 import { Rating } from "../Rating/Rating";
@@ -31,14 +32,14 @@ export const CategoryItem: React.FC<Props> = React.memo(({ info }) => {
 
       <div className={styles.rightContent}>
         <div className={styles.rating}>
-          {info.rating.imdb && <Rating rating={info.rating.imdb} />}
+          {info.rating.imdb > 0 && <Rating rating={info.rating.imdb} />}
         </div>
         <Button
-          variant={isSaved ? "saved" : "notSaved"}
-          iconLeft={isSaved ? <FcLike /> : <FcLikePlaceholder />}
+          variant={isSaved ? "savedBlack" : "notSavedBlack"}
+          iconLeft={isSaved ? <BsCheck /> : <FcLike />}
           onClick={saveToFavourite}
         >
-          Смотреть позже
+          {isSaved ? "Сохранено" : "Сохранить"}
         </Button>
       </div>
     </div>

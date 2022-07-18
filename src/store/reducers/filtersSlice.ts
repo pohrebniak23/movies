@@ -1,24 +1,42 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface InitialState {
-  year: string,
-  rating: string,
+  year: {
+    min: number,
+    max: number
+  },
+  rating: {
+    min: number,
+    max: number
+  },
 }
 
-const initialState: InitialState = {
-  year: "2022",
-  rating: "5-10",
+export const initialState: InitialState = {
+  year: {
+    min: 2012,
+    max: 2022
+  },
+  rating: {
+    min: 5,
+    max: 10
+  },
 }
 
 const filtersSlice = createSlice({
   name: 'filterSlice',
   initialState,
   reducers: ({
-    setYear(state, action: PayloadAction<string>) {
-      state.year = action.payload
+    setYear(state, action: PayloadAction<number[]>) {
+      state.year = {
+        min: action.payload[0],
+        max: action.payload[1]
+      }
     },
-    setRating(state, action: PayloadAction<string>) {
-      state.rating = action.payload
+    setRating(state, action: PayloadAction<number[]>) {
+      state.rating = {
+        min: action.payload[0],
+        max: action.payload[1]
+      }
     }
   })
 });
