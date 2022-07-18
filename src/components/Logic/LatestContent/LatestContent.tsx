@@ -6,11 +6,15 @@ import styles from "./LatestContent.module.sass";
 
 type Props = {
   category: string;
+  title: string;
 };
 
-export const LatestContent: React.FC<Props> = ({ category }) => {
+export const LatestContent: React.FC<Props> = ({ category, title }) => {
   const [limit, setLimit] = useState(8);
-  const { data: movies } = filmsApi.useGetLatestContentQuery({ category, limit });
+  const { data: movies } = filmsApi.useGetLatestContentQuery({
+    category,
+    limit,
+  });
 
   const { Container, Grid } = MListItems;
 
@@ -23,9 +27,10 @@ export const LatestContent: React.FC<Props> = ({ category }) => {
       {movies && (
         <ListItems>
           <Container>
+            <h2 className={styles.title}>{title}</h2>
             <Grid cardsList={movies.docs} />
             {movies.total > limit && (
-              <Button classname={styles.button} onClick={loadMoreContent}>
+              <Button variant="white" classname={styles.button} onClick={loadMoreContent}>
                 Показать еще
               </Button>
             )}

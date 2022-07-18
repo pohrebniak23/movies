@@ -37,7 +37,7 @@ export const Header: React.FC = () => {
         {!isDropOpen && <FiMenu className={styles.humburger} onClick={toggleDrop} />}
         {isDropOpen && <GrClose className={styles.humburger} onClick={toggleDrop} />}
 
-        <DropDown dropDownItems={menuItems} isOpen={isDropOpen} />
+        <DropDown dropDownItems={menuItems} isOpen={isDropOpen} setIsDropOpen={setIsDropOpen}/>
       </div>
     </div>
   );

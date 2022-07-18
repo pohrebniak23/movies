@@ -24,8 +24,8 @@ export const FilmInfo: React.FC<Props> = ({ info }) => {
     { title: "Слоган: ", data: info.slogan },
     { title: "Жанр:", data: info.genres.map((gnr, id) => <Fragment key={gnr.name}>{id ? ", " : ""}{gnr.name}</Fragment>)},
     { title: "Время: ", data: info.movieLength ? `${info.movieLength} мин` : null},
-    { title: "Премьера в мире: ", data: dateConverter(info.premiere.world) }
-  ]), [info.countries, info.genres, info.movieLength, info.premiere.world, info.slogan]);
+    { title: "Премьера в мире: ", data: dateConverter(info.premiere?.world) }
+  ]), [info.countries, info.genres, info.movieLength, info.premiere?.world, info.slogan]);
 
   return (
     <div className={styles.info}>

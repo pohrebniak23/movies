@@ -14,6 +14,11 @@ export const filmsApi = createApi({
         url: `/movie?field=rating.kp&search=${rating.min}-${rating.max}&field=type&search=${category}&field=year&search=${year.min}-${year.max}&limit=${limit}&token=${process.env.REACT_APP_TOKEN}`
       })
     }),
+    getFilmByName: builder.query<any, any>({
+      query: (name) => ({
+        url: `/movie?field=name&search=${name}&isStrict=false&token=${process.env.REACT_APP_TOKEN}`
+      })
+    }),
     getFilmById: builder.query<any, any>({
       query: (id) => ({
         url: `/movie?field=id&search=${id}&token=${process.env.REACT_APP_TOKEN}`

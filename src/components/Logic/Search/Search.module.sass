@@ -1,0 +1,66 @@
+.wrapper
+  width: 500px
+  position: relative
+
+.input
+  background: var(--color-white)
+  width: 100%
+  border: none
+  border-radius: 10px
+  padding: 12px 16px
+  outline: none
+  
+.searchIcon
+  position: absolute
+  right: 16px
+  top: 50%
+  transform: translateY(-50%)
+  color: var(--color-bg)
+
+.list
+  position: absolute
+  top: calc(100% + 8px)
+  background: var(--color-white)
+  width: 100%
+  padding: 24px
+  border-radius: 10px
+  border: 1px solid var(--color-bg)
+  z-index: 2
+  max-height: calc(100vh - 120px)
+  overflow-y: scroll
+  display: grid
+  grid-template-columns: 1fr
+  gap: 12px
+
+.item
+  display: flex
+  align-items: center
+  text-decoration: none
+
+.image
+  width: 60px
+  height: 88px
+  object-fit: cover
+  margin-right: 20px
+
+.info
+  display: flex
+  flex-direction: column
+  max-width: 500px
+
+.name
+  font-size: 24px
+  margin-bottom: 8px
+  color: var(--color-bg)
+
+.properties
+  margin-bottom: 16px
+  color: var(--color-bg)
+
+.description
+  overflow: hidden
+  display: -webkit-box
+  -webkit-line-clamp: 2
+  line-clamp: 2
+  -webkit-box-orient: vertical
+  text-overflow: ellipsis

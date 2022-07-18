@@ -4,24 +4,15 @@ import styles from './Input.module.sass';
 type Props = {
   change: (value: any) => void,
   value: string,
-  maxValue?: number,
   type?: string
 }
 
-export const Input: React.FC<Props> = ({ value, change, maxValue, type }) => {
+export const Input: React.FC<Props> = ({ value, change, type }) => {
   const handleChange = (value: string) => {
-    console.log(maxValue)
-    console.log(+value)
-    if (maxValue && +value <= maxValue) {
-      change((prevState: any) => ({
-        min: prevState.min,
-        max: value
-      }));
-    }
-
-    // if (!maxValue) {
-    //   change(value);
-    // }
+    change((prevState: any) => ({
+      min: prevState.min,
+      max: value
+    }));
   }
 
   return (
