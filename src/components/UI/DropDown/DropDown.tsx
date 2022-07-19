@@ -15,7 +15,7 @@ export const DropDown: React.FC<Props> = ({ dropDownItems, isOpen, setIsDropOpen
   const { innerBorderRef } = useOnOutsideClick(() => setIsDropOpen(false));
 
   return (
-    <div  ref={innerBorderRef} className={classNames(styles.dropDown, isOpen && styles.dropDownOpen)}>
+    <div ref={innerBorderRef} className={classNames(styles.dropDown, isOpen && styles.dropDownOpen)}>
       {dropDownItems.map((item: IDropDown) => (
         <Link key={item.link} to={item.link} className={styles.link} onClick={() => setIsDropOpen(!isOpen)}>
           {item.icon} {item.name}

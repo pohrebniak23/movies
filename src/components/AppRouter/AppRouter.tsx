@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { PublicRoute } from "../../routes";
-import { Login } from "./Login";
+import { Login } from "../Logic/Login/Login";
 import { Films } from "../../pages/Films/Films";
 import { SingleFilm } from "../../pages/SingleFilm/SingleFilm";
 import { Home } from "../../pages/Home/Home";

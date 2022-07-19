@@ -6,6 +6,7 @@ import { IMovie } from "../../../types/IMovie";
 import { Loader } from "../../UI/Loader/Loader";
 import { SearchItem } from "./SearchItem";
 import styles from "./Search.module.sass";
+import { useOnOutsideClick } from "../../../hooks/useOnOutsideClick";
 
 export const Search: React.FC = () => {
   const [search, setSearch] = useState<string>("");
@@ -22,8 +23,10 @@ export const Search: React.FC = () => {
     setSearch(value);
   };
 
+  const { innerBorderRef } = useOnOutsideClick(() => setIsActive(false));
+
   return (
-    <div className={styles.wrapper}>
+    <div ref={innerBorderRef} className={styles.wrapper}>
       <input
         type="text"
         value={search}
@@ -31,7 +34,6 @@ export const Search: React.FC = () => {
           searchHandle(e.target.value)
         }
         onFocus={() => setIsActive(true)}
-        onBlur={() => setIsActive(false)}
         className={styles.input}
         placeholder="Поиск"
       />

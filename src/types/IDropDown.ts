@@ -1,4 +1,4 @@
-import { RouteNames } from "../components/Logic/AppRouter";
+import { RouteNames } from "../components/AppRouter/AppRouter";
 
 export interface IDropDown {
   name: string;

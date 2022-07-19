@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { RouteNames } from "../AppRouter";
+import { RouteNames } from "../../AppRouter/AppRouter";
 import { Search } from "../Search/Search";
 import {FiMenu} from "react-icons/fi";
 import {ImFilm} from "react-icons/im";

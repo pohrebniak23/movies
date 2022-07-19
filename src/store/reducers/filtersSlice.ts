@@ -9,6 +9,7 @@ interface InitialState {
     min: number,
     max: number
   },
+  genre: string
 }
 
 export const initialState: InitialState = {
@@ -20,6 +21,7 @@ export const initialState: InitialState = {
     min: 5,
     max: 10
   },
+  genre: ""
 }
 
 const filtersSlice = createSlice({
@@ -37,12 +39,18 @@ const filtersSlice = createSlice({
         min: action.payload[0],
         max: action.payload[1]
       }
-    }
+    },
+    setGenre(state, action: PayloadAction<string>) {
+      state.genre = action.payload
+    },
+    reset: () => initialState
   })
 });
 
 export default filtersSlice.reducer;
 export const {
   setYear,
-  setRating
+  setRating,
+  setGenre,
+  reset
 } = filtersSlice.actions;
