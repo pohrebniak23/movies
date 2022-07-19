@@ -5,6 +5,7 @@ import { IMovie } from "../../../types/IMovie";
 import { Button } from "../../UI/Button/Button";
 import { Rating } from "../Rating/Rating";
 import styles from "./CategoryItem.module.sass";
+import { Link } from "react-router-dom";
 
 type Props = {
   info: IMovie;
@@ -20,9 +21,13 @@ export const CategoryItem: React.FC<Props> = React.memo(({ info }) => {
   return (
     <div className={styles.categoryItem}>
       <div className={styles.leftContent}>
-        <img src={info.poster.url} alt="" className={styles.image} />
+        <Link to={`/films/${info.id}`}>
+          <img src={info.poster.url} alt="" className={styles.image} />
+        </Link>
         <div className={styles.info}>
-          <h2 className={styles.title}>{info.name}</h2>
+          <Link to={`/films/${info.id}`}>
+            <h2 className={styles.title}>{info.name}</h2>
+          </Link>
           <span className={styles.properties}>
             {info.year} {info.movieLength} мин
           </span>

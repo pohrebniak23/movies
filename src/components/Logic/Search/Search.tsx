@@ -3,10 +3,10 @@ import { BiSearchAlt } from "react-icons/bi";
 import { useDebounce } from "../../../hooks/useDebounce";
 import { filmsApi } from "../../../services/filmsService";
 import { IMovie } from "../../../types/IMovie";
-import { Loader } from "../../UI/Loader/Loader";
 import { SearchItem } from "./SearchItem";
-import styles from "./Search.module.sass";
+import { Loader } from "../../UI/Loader/Loader";
 import { useOnOutsideClick } from "../../../hooks/useOnOutsideClick";
+import styles from "./Search.module.sass";
 
 export const Search: React.FC = () => {
   const [search, setSearch] = useState<string>("");
@@ -45,7 +45,7 @@ export const Search: React.FC = () => {
             <Loader height="100px" />
           ) : (
             list?.docs?.map((item: IMovie) => (
-              <SearchItem key={item.id} data={item} />
+              <SearchItem key={item.id} data={item} setIsActive={setIsActive} />
             ))
           )}
         </div>

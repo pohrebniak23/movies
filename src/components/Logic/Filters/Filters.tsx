@@ -46,7 +46,7 @@ export const Filters: React.FC = () => {
   useEffect(() => {
     setYearData(year);
     setRatingData(rating);
-  }, [year]);
+  }, [year, rating]);
 
   const filtersList = [
     {

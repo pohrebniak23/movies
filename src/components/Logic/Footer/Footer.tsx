@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { RouteNames } from "../../AppRouter/AppRouter";
 import styles from "./Footer.module.sass";
 
-type Link = {
+type TLink = {
   link: string;
   title: string;
 };
@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
           </Link>
 
           <div className={styles.links}>
-            {links.map((item: Link) => (
+            {links.map((item: TLink) => (
               <Link key={item.link} to={item.link} className={styles.link}>
                 {item.title}
               </Link>

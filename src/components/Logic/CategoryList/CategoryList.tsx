@@ -13,7 +13,6 @@ type Props = {
 export const CategoryList: React.FC<Props> = React.memo(({ category }) => {
   const { year, rating, genre } = useAppSelector((state) => state.filters);
   const [limit] = useState(8);
-  console.log(genre)
   const {
     data: list,
     isFetching,
