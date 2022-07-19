@@ -6,7 +6,7 @@ import styles from './ListItems.module.sass';
 
 export const ListItems: React.FC<PropsWithChildren> = ({ children }) => {
   return (
-    <div className={styles.listItems}>ListItems
+    <div className={styles.listItems}>
       {children}
     </div>
   )
@@ -15,7 +15,7 @@ export const ListItems: React.FC<PropsWithChildren> = ({ children }) => {
 module MListItems {
   export const Container: React.FC<PropsWithChildren<{}>> = ({children}) => {
     return (
-      <div className={styles.container}>
+      <div className="container">
         {children}
       </div>
     )
@@ -25,7 +25,7 @@ module MListItems {
     cardsList: IMovie[] | undefined
   }
 
-  export const Grid: React.FC<Props> = ({ cardsList }) => {
+  export const Grid: React.FC<Props> = React.memo(({ cardsList }) => {
     return (
       <div className={styles.grid}>
         {cardsList?.map((card: IMovie) => (
@@ -35,7 +35,7 @@ module MListItems {
         ))}
       </div>
     )
-  }
+  });
 }
 
 export {MListItems};
