@@ -7,6 +7,10 @@
   color: var(--color-white)
   margin-bottom: 32px
   margin-top: 16px
+  @media (max-width: 480px)
+    font-size: 24px
+    margin-bottom: 24px
+    margin-top: 0
 
 .description
   font-size: 18px
@@ -17,12 +21,17 @@
   font-size: 28px
   color: var(--color-white)
   margin-top: 32px
+  @media (max-width: 480px)
+    font-size: 20px
+    margin-top: 24px
 
 .gridInfo
   display: grid
   grid-template-columns: 1fr
   gap: 16px
   margin-top: 24px
+  @media (max-width: 480px)
+    gap: 12px
 
 .nav
   display: flex

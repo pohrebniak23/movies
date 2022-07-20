@@ -6,11 +6,13 @@ import { FiMenu } from "react-icons/fi";
 import { ImFilm } from "react-icons/im";
 import { MdOutlineLocalMovies, MdChildCare } from "react-icons/md";
 import { GrClose } from "react-icons/gr";
+import { BiSearchAlt } from "react-icons/bi";
 import styles from "./Header.module.sass";
 import { DropDown } from "../../UI/DropDown/DropDown";
 
 export const Header: React.FC = () => {
   const [isDropOpen, setIsDropOpen] = useState<boolean>(false);
+  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
 
   const menuItems = useMemo(
     () => [
@@ -29,6 +31,10 @@ export const Header: React.FC = () => {
     setIsDropOpen(!isDropOpen);
   };
 
+  const toogleSearch = () => {
+    setIsSearchOpen(!isSearchOpen);
+  }
+
   return (
     <div className={styles.header}>
       <div className="container">
@@ -37,20 +43,23 @@ export const Header: React.FC = () => {
             Logo
           </Link>
 
-          <Search />
-
-          {!isDropOpen && (
-            <FiMenu className={styles.humburger} onClick={toggleDrop} />
-          )}
-          {isDropOpen && (
-            <GrClose className={styles.humburger} onClick={toggleDrop} />
-          )}
+          <Search isSearchOpen={isSearchOpen} setIsSearchOpen={setIsSearchOpen} />
 
           <DropDown
             dropDownItems={menuItems}
             isOpen={isDropOpen}
             setIsDropOpen={setIsDropOpen}
           />
+
+          <div className={styles.nav}>
+            <BiSearchAlt className={styles.searchIcon} onClick={toogleSearch} />
+            {!isDropOpen && (
+              <FiMenu className={styles.humburger} onClick={toggleDrop} />
+            )}
+            {isDropOpen && (
+              <GrClose className={styles.humburger} onClick={toggleDrop} />
+            )}
+          </div>
         </div>
       </div>
     </div>

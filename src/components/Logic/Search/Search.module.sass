@@ -1,6 +1,18 @@
 .wrapper
   width: 500px
   position: relative
+  display: block
+  @media (max-width: 480px)
+    position: absolute
+    width: 100%
+    // opacity: 0
+    // z-index: -1
+    display: none
+
+.wrapperActive
+  display: block
+  @media (max-width: 480px)
+    display: block
 
 .input
   background: var(--color-white)
@@ -31,6 +43,8 @@
   display: grid
   grid-template-columns: 1fr
   gap: 12px
+  @media (max-width: 480px)
+    padding: 16px
 
 .item
   display: flex
@@ -42,20 +56,35 @@
   height: 88px
   object-fit: cover
   margin-right: 20px
+  @media (max-width: 480px)
+    height: 70px
+    width: 52px
+    margin-right: 12px
 
 .info
   display: flex
   flex-direction: column
   max-width: 500px
+  @media (max-width: 480px)
+    max-width: 100%
 
 .name
   font-size: 24px
   margin-bottom: 8px
   color: var(--color-bg)
+  @media (max-width: 480px)
+    font-size: 16px
+    overflow: hidden
+    display: -webkit-box
+    -webkit-line-clamp: 2
+    line-clamp: 2
+    -webkit-box-orient: vertical
+    text-overflow: ellipsis
 
 .properties
-  margin-bottom: 16px
   color: var(--color-bg)
+  @media (max-width: 480px)
+    font-size: 14px
 
 .description
   overflow: hidden

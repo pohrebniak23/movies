@@ -29,7 +29,7 @@ export const CategoryItem: React.FC<Props> = React.memo(({ info }) => {
             <h2 className={styles.title}>{info.name}</h2>
           </Link>
           <span className={styles.properties}>
-            {info.year} {info.movieLength} мин
+            {info.year}, {info.movieLength} мин
           </span>
           <p className={styles.description}>{info.description}</p>
         </div>

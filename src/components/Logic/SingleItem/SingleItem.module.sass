@@ -4,9 +4,14 @@
   justify-content: space-between
   margin-top: 60px
   gap: 60px
+  @media (max-width: 480px)
+    grid-template-columns: 1fr
+    gap: 24px
 
 .poster
   width: 100%
   height: 550px
   object-fit: cover
   border-radius: 16px
+  @media (max-width: 480px)
+    height: 500px
