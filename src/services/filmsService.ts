@@ -24,14 +24,9 @@ export const filmsApi = createApi({
         url: `/movie?field=id&search=${id}&token=${process.env.REACT_APP_TOKEN}`
       })
     }),
-    getFilmBackdrop: builder.query<any, any>({
+    getActorById: builder.query<any, any>({
       query: (id) => ({
-        url: `/image?field=movieId&search=${id}&field=type&search=backdrops&token=${process.env.REACT_APP_TOKEN}`
-      })
-    }),
-    getVideo: builder.query<any, any>({
-      query: (id) => ({
-        url: `/movie?field=id&search=${id}&token=${process.env.REACT_APP_TOKEN}`
+        url: `/person?field=id&search=${id}&token=${process.env.REACT_APP_TOKEN}`
       })
     })
   })

@@ -106,7 +106,7 @@ export interface Country {
   name: string;
 }
 
-export interface Person {
+export interface IPerson {
   id: number;
   name: string;
   enName: string;
@@ -163,7 +163,7 @@ export interface IMovieInfo {
   genres: Genre[];
   countries: Country[];
   seasonsInfo: any[];
-  persons: Person[];
+  persons: IPerson[];
   lists: any[];
   typeNumber: number;
   alternativeName: string;
