@@ -2,20 +2,27 @@ import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { RouteNames } from "../../AppRouter/AppRouter";
 import { Search } from "../Search/Search";
-import {FiMenu} from "react-icons/fi";
-import {ImFilm} from "react-icons/im";
-import {MdOutlineLocalMovies, MdChildCare} from "react-icons/md";
-import {GrClose} from "react-icons/gr";
-import styles from "./Header.module.sass";
+import { FiMenu } from "react-icons/fi";
+import { ImFilm } from "react-icons/im";
+import { MdOutlineLocalMovies, MdChildCare } from "react-icons/md";
+import { GrClose } from "react-icons/gr";
+import { BiSearchAlt } from "react-icons/bi";
 import { DropDown } from "../../UI/DropDown/DropDown";
+import { ReactComponent as Logo } from "../../../assets/logo.svg";
+import styles from "./Header.module.sass";
 
 export const Header: React.FC = () => {
   const [isDropOpen, setIsDropOpen] = useState<boolean>(false);
+  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
 
   const menuItems = useMemo(
     () => [
       { name: "Фильмы", link: RouteNames.FILMS, icon: <ImFilm /> },
-      { name: "Сериалы", link: RouteNames.SERIALS, icon: <MdOutlineLocalMovies />  },
+      {
+        name: "Сериалы",
+        link: RouteNames.SERIALS,
+        icon: <MdOutlineLocalMovies />,
+      },
       { name: "Мультфильмы", link: RouteNames.CARTOONS, icon: <MdChildCare /> },
     ],
     []
@@ -25,19 +32,39 @@ export const Header: React.FC = () => {
     setIsDropOpen(!isDropOpen);
   };
 
+  const toogleSearch = () => {
+    setIsSearchOpen(!isSearchOpen);
+  };
+
   return (
-    <div className="container">
-      <div className={styles.header}>
-        <Link to={RouteNames.HOME} className={styles.logo}>
-          Logo
-        </Link>
+    <div className={styles.header}>
+      <div className="container">
+        <div className={styles.block}>
+          <Link to={RouteNames.HOME} className={styles.logo}>
+            <Logo />
+          </Link>
 
-        <Search />
+          <Search
+            isSearchOpen={isSearchOpen}
+            setIsSearchOpen={setIsSearchOpen}
+          />
 
-        {!isDropOpen && <FiMenu className={styles.humburger} onClick={toggleDrop} />}
-        {isDropOpen && <GrClose className={styles.humburger} onClick={toggleDrop} />}
+          <DropDown
+            dropDownItems={menuItems}
+            isOpen={isDropOpen}
+            setIsDropOpen={setIsDropOpen}
+          />
 
-        <DropDown dropDownItems={menuItems} isOpen={isDropOpen} setIsDropOpen={setIsDropOpen}/>
+          <div className={styles.nav}>
+            <BiSearchAlt className={styles.searchIcon} onClick={toogleSearch} />
+            {!isDropOpen && (
+              <FiMenu className={styles.humburger} onClick={toggleDrop} />
+            )}
+            {isDropOpen && (
+              <GrClose className={styles.humburger} onClick={toggleDrop} />
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

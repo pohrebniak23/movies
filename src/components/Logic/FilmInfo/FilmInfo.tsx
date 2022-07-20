@@ -7,6 +7,7 @@ import { AiOutlinePlayCircle } from 'react-icons/ai';
 import { FcLike } from 'react-icons/fc';
 import { BsCheck } from 'react-icons/bs';
 import styles from './FilmInfo.module.sass';
+import { Link } from "react-router-dom";
 
 type Props = {
   info: IMovieInfo;
@@ -31,9 +32,11 @@ export const FilmInfo: React.FC<Props> = ({ info }) => {
     <div className={styles.info}>
       <h1 className={styles.title}>{info.name}</h1>
       <div className={styles.nav}>
-        <Button variant="white" iconLeft={<AiOutlinePlayCircle />}>
-          Смотреть
-        </Button>
+        <Link to={`/watch/${info.id}`}>
+          <Button variant="white" iconLeft={<AiOutlinePlayCircle />}>
+            Смотреть
+          </Button>
+        </Link>
         <Button variant={isSaved ? "saved" : "notSaved"} iconLeft={isSaved ? <BsCheck /> : <FcLike />} onClick={saveToFavourite}>
           {isSaved ? 'Сохранено' : 'Сохранить'}
         </Button>

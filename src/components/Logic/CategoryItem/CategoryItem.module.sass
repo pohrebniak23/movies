@@ -18,6 +18,7 @@
 
 .image
   width: 100px
+  margin: 0
   margin-right: 20px
 
 .info
@@ -27,6 +28,8 @@
 
 .title
   margin-bottom: 16px
+  color: var(--color-bg)
+  margin-top: 0
 
 .properties
   margin-bottom: 16px
@@ -42,3 +45,28 @@
 
 .rating
   margin-bottom: 10px
+
+@media (max-width: 480px)
+  .categoryItem
+    padding: 16px
+    border-radius: 8px
+
+  .image
+    width: 60px
+    height: 90px
+    object-fit: cover
+    margin-right: 14px
+
+  .title
+    font-size: 16px
+    margin-bottom: 12px
+
+  .properties
+    font-size: 12px
+    margin-bottom: 12px
+
+  .description
+    font-size: 12px
+
+  .rightContent
+    display: none
