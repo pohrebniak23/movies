@@ -9,6 +9,7 @@ import { NotFound } from "../../pages/NotFound/NotFound";
 import { Watch } from "../../pages/Watch/Watch";
 import { Serials } from "../../pages/Serials/Serials";
 import { Cartoons } from "../../pages/Cartoons/Cartoons";
+import { Actor } from "../../pages/Actor/Actor";
 
 export enum RouteNames {
   HOME = "/",
@@ -20,6 +21,7 @@ export enum RouteNames {
   CARTOONS = "/cartoons",
   CARTOONS_ITEM = "/cartoons/:id",
   WATCH = "/watch/:id",
+  ACTOR = "/actor/:id",
   ACCOUNT = "/account",
   SETTINGS = "/settings"
 }
@@ -64,6 +66,10 @@ export const AppRouter: React.FC = () => {
       <Route
         path={RouteNames.WATCH}
         element={<Watch />}
+      />
+      <Route
+        path={RouteNames.ACTOR}
+        element={<Actor />}
       />
 
       {/* <Route
