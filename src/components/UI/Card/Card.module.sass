@@ -6,17 +6,12 @@
   transition: .4s
   &:hover
     transform: translateY(-10px)
-  @media (max-width: 480px)
-    max-width: 280px
 
 .image
   height: 400px
   width: 100%
   object-fit: cover
   border-radius: 8px
-  @media (max-width: 480px)
-    height: 200px
-    max-width: 280px
 
 .title
   font-size: 16px
@@ -25,9 +20,6 @@
   padding-left: 8px
   padding-right: 8px
   color: #000
-  @media (max-width: 480px)
-    font-size: 12px
-    line-height: 16px
 
 .nav
   margin-top: 8px
@@ -41,7 +33,25 @@
   color: rgba(0, 0, 0, .8)
   svg
     margin-right: 4px
-  @media (max-width: 480px)
+
+@media (max-width: 480px)
+  .card
+    &:hover
+      transform: translateY(0)
+
+  .image
+    height: 200px
+    max-width: 280px
+
+  .nav
+    padding: 0
+
+  .title
+    font-size: 12px
+    line-height: 16px
+    padding: 0
+
+  .item
     font-size: 12px
     svg
       margin-right: 2px

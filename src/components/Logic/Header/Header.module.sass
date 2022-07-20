@@ -36,10 +36,19 @@
 
 .searchIcon
   display: none
-  @media (max-width: 480px)
-    display: block
-    color: var(--color-white)
+  
 
 .nav
   display: flex
   gap: 16px
+
+@media (max-width: 480px)
+  .searchIcon
+    width: 24px
+    height: 24px
+    display: block
+    color: var(--color-white)
+
+  .humburger
+    width: 24px
+    height: 24px

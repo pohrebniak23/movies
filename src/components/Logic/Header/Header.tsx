@@ -7,8 +7,9 @@ import { ImFilm } from "react-icons/im";
 import { MdOutlineLocalMovies, MdChildCare } from "react-icons/md";
 import { GrClose } from "react-icons/gr";
 import { BiSearchAlt } from "react-icons/bi";
-import styles from "./Header.module.sass";
 import { DropDown } from "../../UI/DropDown/DropDown";
+import { ReactComponent as Logo } from "../../../assets/logo.svg";
+import styles from "./Header.module.sass";
 
 export const Header: React.FC = () => {
   const [isDropOpen, setIsDropOpen] = useState<boolean>(false);
@@ -33,17 +34,20 @@ export const Header: React.FC = () => {
 
   const toogleSearch = () => {
     setIsSearchOpen(!isSearchOpen);
-  }
+  };
 
   return (
     <div className={styles.header}>
       <div className="container">
         <div className={styles.block}>
           <Link to={RouteNames.HOME} className={styles.logo}>
-            Logo
+            <Logo />
           </Link>
 
-          <Search isSearchOpen={isSearchOpen} setIsSearchOpen={setIsSearchOpen} />
+          <Search
+            isSearchOpen={isSearchOpen}
+            setIsSearchOpen={setIsSearchOpen}
+          />
 
           <DropDown
             dropDownItems={menuItems}

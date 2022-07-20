@@ -2,32 +2,21 @@
   border-top: 1px solid rgba(255, 255, 255, .2)
   margin-top: 50px
   flex: 0 0 auto
-  
+
 .block
   padding: 32px 0
   display: grid
   grid-template-columns: 1fr 1fr 1fr
-  @media (max-width: 480px)
-    grid-template-columns: 1fr
-  
-  
+
 .logo
-  font-size: 24px
   color: var(--color-white)
   text-decoration: none
-  @media (max-width: 480px)
-    text-align: center
-    margin-bottom: 16px
 
 .links
   display: flex
   align-items: center
   justify-content: center
   gap: 48px
-  @media (max-width: 480px)
-    gap: 16px
-    flex-direction: column
-    margin: 30px 0
 
 .link
   color: var(--color-white)
@@ -38,6 +27,21 @@
   margin-left: auto
   color: var(--color-white)
   font-size: 16px
-  @media (max-width: 480px)
+
+@media (max-width: 480px)
+  .block
+    grid-template-columns: 1fr
+
+  .logo
+    text-align: center
+    margin-bottom: 16px
+
+  .links
+    gap: 16px
+    flex-direction: column
+    margin: 30px 0
+
+  .copyright
     margin: 0 auto
     margin-top: 16px
+    font-size: 12px

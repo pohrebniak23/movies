@@ -64,7 +64,7 @@ export const Search: React.FC<Props> = ({ isSearchOpen, setIsSearchOpen }) => {
             <Loader height="100px" />
           ) : (
             list?.docs?.map((item: IMovie) => (
-              <SearchItem key={item.id} data={item} setIsActive={setIsActive} />
+              <SearchItem key={item.id} data={item} setIsActive={setIsActive} setIsSearchOpen={setIsSearchOpen} />
             ))
           )}
         </div>

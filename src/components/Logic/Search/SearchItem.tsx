@@ -6,11 +6,13 @@ import styles from "./Search.module.sass";
 type Props = {
   data: IMovie;
   setIsActive: (value: boolean) => void;
+  setIsSearchOpen: (value: boolean) => void;
 };
 
-export const SearchItem: React.FC<Props> = ({ data, setIsActive }) => {
+export const SearchItem: React.FC<Props> = ({ data, setIsActive, setIsSearchOpen }) => {
   const hideHandle = () => {
     setIsActive(false);
+    setIsSearchOpen(false);
   }
 
   return (
