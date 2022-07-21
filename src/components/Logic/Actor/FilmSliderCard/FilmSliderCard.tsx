@@ -9,7 +9,6 @@ type Props = {
 
 export const FilmSliderCard: React.FC<Props> = ({ id, name }) => {
   const { data: image } = filmsApi.useGetActorImageByIdQuery(id);
-  console.log(image?.docs, id)
   return (
     <div className={styles.card}>
       {image?.docs[0] ? (

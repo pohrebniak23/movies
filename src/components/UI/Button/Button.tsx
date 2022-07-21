@@ -5,8 +5,8 @@ import styles from "./Button.module.sass";
 export interface IButton {
   classname?: string;
   variant?: string;
-  iconLeft?: any;
-  iconRight?: any;
+  iconLeft?: JSX.Element;
+  iconRight?: JSX.Element;
   onClick?: () => void;
 }
 

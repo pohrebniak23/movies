@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { PublicRoute } from "../../routes";
 import { Films } from "../../pages/Films/Films";
 import { Home } from "../../pages/Home/Home";
 import { NotFound } from "../../pages/NotFound/NotFound";
@@ -26,14 +25,8 @@ export enum RouteNames {
 }
 
 export const AppRouter: React.FC = () => {
-  const isAuth = true;
-
   return (
     <Routes>
-      {/* <Route
-        path={RouteNames.LOGIN}
-        element={<PublicRoute component={Login} isAuth={isAuth} />}
-      /> */}
       <Route
         path={RouteNames.HOME}
         element={<Home />}

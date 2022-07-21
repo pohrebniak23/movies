@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
 import { useDebounce } from "../../../hooks/useDebounce";
@@ -16,7 +16,6 @@ type Props = {
 };
 
 export const Search: React.FC<Props> = ({ isSearchOpen, setIsSearchOpen }) => {
-  const [skip, setSkip] = useState(true);
   const [search, setSearch] = useState<string>("");
   const { debouncedValue } = useDebounce(search, 300);
   const [isActive, setIsActive] = useState(false);
@@ -25,22 +24,13 @@ export const Search: React.FC<Props> = ({ isSearchOpen, setIsSearchOpen }) => {
     data: list,
     isFetching,
     isLoading,
-  } = filmsApi.useGetFilmByNameQuery(debouncedValue, { skip });
+  } = filmsApi.useGetFilmByNameQuery(debouncedValue, { skip: debouncedValue.length === 0 });
 
   const searchHandle = (value: string) => {
     setSearch(value);
   };
 
-  useEffect(() => {
-    if (debouncedValue.length > 0) {
-      setSkip(false)
-    } else {
-      setSkip(true)
-    }
-  }, [debouncedValue])
-
   const { innerBorderRef } = useOnOutsideClick(() => {
-    setSkip(true)
     setIsActive(false)
   });
 

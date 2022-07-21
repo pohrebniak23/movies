@@ -4,7 +4,6 @@ import { filmsApi } from '../../../services/filmsService';
 import { BackBtn } from '../../UI/BackBtn/BackBtn';
 import { Loader } from '../../Simple/Loader/Loader';
 import { Tabs } from '../../UI/Tabs/Tabs';
-import { DefaultSlider } from '../DefaultSlider/DefaultSlider';
 import { ActorInfo } from './ActorInfo/ActorInfo';
 import styles from './Actor.module.sass';
 import { ActorFilmsSlider } from './ActorFilmsSlider/ActorFilmsSlider';
@@ -13,7 +12,6 @@ export const Actor: React.FC = () => {
   const { id } = useParams();
   const { data: person } = filmsApi.useGetActorByIdQuery(id);
 
-  console.log(person)
   const tabs = useMemo(
     () => [
       {

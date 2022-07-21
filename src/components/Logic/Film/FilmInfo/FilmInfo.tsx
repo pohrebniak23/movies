@@ -16,8 +16,6 @@ type Props = {
 export const FilmInfo: React.FC<Props> = ({ info }) => {
   const [isSaved, setIsSaved] = useState(false);
 
-  console.log(info);
-
   const saveToFavourite = () => {
     setIsSaved(!isSaved);
   };

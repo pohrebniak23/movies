@@ -9,7 +9,7 @@ import styles from "./Film.module.sass";
 import { FilmActorsSlider } from "./FilmActorsSlider/FilmSlider";
 
 export const Film: React.FC = () => {
-  const { id } = useParams(); 
+  const { id } = useParams();
   const { data: filmData } = filmsApi.useGetFilmByIdQuery(id);
   
   const tabs = useMemo(

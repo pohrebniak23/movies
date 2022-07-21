@@ -1,50 +1,57 @@
-import React from "react";
-import Select from 'react-select';
+import React, { CSSProperties } from "react";
+import Select, {
+  SingleValueProps,
+} from "react-select";
+import { Genres } from "../../../types/IFilter";
 
 type Props = {
-  selectedOption: any;
+  selectedOption: Genres;
   setSelectedOption: any;
-  options: any;
-}
+  options: Genres[];
+};
 
-const customStyles = {
-  option: (provided: any) => ({
+const customStyles: any = {
+  option: (provided: CSSProperties) => ({
     ...provided,
-    fontSize: '14px'
+    fontSize: "14px",
   }),
-  control: (provided: any) => ({
+  control: (provided: CSSProperties) => ({
     ...provided,
-    padding: '10px 12px',
-    border: '1px solid var(--color-gray)',
-    borderRadius: '8px',
-    fontSize: '14px'
+    padding: "10px 12px",
+    border: "1px solid var(--color-gray)",
+    borderRadius: "8px",
+    fontSize: "14px",
   }),
-  valueContainer: (provided: any) => ({
+  valueContainer: (provided: CSSProperties) => ({
     ...provided,
-    padding: '0px',
-    margin: '0px'
+    padding: "0px",
+    margin: "0px",
   }),
-  input: (provided: any) => ({
+  input: (provided: CSSProperties) => ({
     ...provided,
-    margin: '0px'
+    margin: "0px",
   }),
   indicatorSeparator: () => ({
-    display: 'none',
-    padding: '0px'
+    display: "none",
+    padding: "0px",
   }),
-  dropdownIndicator: (provided: any) => ({
+  dropdownIndicator: (provided: CSSProperties) => ({
     ...provided,
-    padding: '0px',
+    padding: "0px",
   }),
-  singleValue: (provided: any, state: any) => {
+  singleValue: (provided: CSSProperties, state: SingleValueProps) => {
     const opacity = state.isDisabled ? 0.5 : 1;
-    const transition = 'opacity 300ms';
+    const transition = "opacity 300ms";
 
     return { ...provided, opacity, transition };
-  }
-}
+  },
+};
 
-export const CustomSelect: React.FC<Props> = ({ selectedOption, setSelectedOption, options }) => {
+export const CustomSelect: React.FC<Props> = ({
+  selectedOption,
+  setSelectedOption,
+  options,
+}) => {
   return (
     <Select
       styles={customStyles}

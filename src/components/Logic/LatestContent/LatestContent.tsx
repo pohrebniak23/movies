@@ -39,7 +39,6 @@ export const LatestContent: React.FC<Props> = ({ category, title }) => {
               <Loader height="200px" />
             )}
             {movies.total > limit && (
-              
               <Button
                 variant="white"
                 classname={styles.button}

@@ -1,8 +1,4 @@
 import React, { Fragment, useMemo } from "react";
-import { typeConverter } from "../../../../helpers/typeConverter";
-import { Button } from "../../../UI/Button/Button";
-import { AiOutlinePlayCircle } from "react-icons/ai";
-import { Link } from "react-router-dom";
 import { IActor } from "../../../../types/IActor";
 import styles from "./ActorInfo.module.sass";
 import { dateConverter } from "../../../../helpers/dateConverter";
@@ -12,8 +8,6 @@ type Props = {
 };
 
 export const ActorInfo: React.FC<Props> = ({ info }) => {
-  console.log(info);
-
   const infoList = useMemo(
     () => [
       {

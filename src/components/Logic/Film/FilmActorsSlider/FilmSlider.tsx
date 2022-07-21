@@ -4,13 +4,13 @@ import { ActorCard } from '../../../Simple/ActorСard/ActorCard';
 import { DefaultSlider } from '../../DefaultSlider/DefaultSlider'
 
 type Props = {
-  actors: IPerson[];
+  actors: IPerson[] | undefined;
 }
 
 export const FilmActorsSlider: React.FC<Props> = ({ actors }) => {
   return (
     <DefaultSlider>
-      {actors.map((actor) => (
+      {actors?.map((actor) => (
         <ActorCard key={actor.id} actorData={actor} />
       ))}
     </DefaultSlider>
