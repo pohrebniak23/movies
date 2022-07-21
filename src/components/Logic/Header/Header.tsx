@@ -7,7 +7,7 @@ import { ImFilm } from "react-icons/im";
 import { MdOutlineLocalMovies, MdChildCare } from "react-icons/md";
 import { GrClose } from "react-icons/gr";
 import { BiSearchAlt } from "react-icons/bi";
-import { DropDown } from "../../UI/DropDown/DropDown";
+import { DropDown } from "../../Simple/DropDown/DropDown";
 import { ReactComponent as Logo } from "../../../assets/logo.svg";
 import styles from "./Header.module.sass";
 

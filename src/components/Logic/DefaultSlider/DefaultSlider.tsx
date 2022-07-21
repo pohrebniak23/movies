@@ -1,18 +1,11 @@
 import React, { PropsWithChildren } from "react";
-import { IPerson } from "../../../types/IMovieInfo";
-import { ActorCard } from "../ActorСard/ActorCard";
 import { GrNext, GrPrevious } from "react-icons/gr";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./DefaultSlider.sass";
 
-type Props = {
-  actors?: IPerson[];
-  films?: any;
-};
-
-export const DefaultSlider: React.FC<Props> = ({ actors, films }) => {
+export const DefaultSlider: React.FC<PropsWithChildren> = ({ children }) => {
   const settings = {
     infinite: true,
     speed: 500,
@@ -42,30 +35,14 @@ export const DefaultSlider: React.FC<Props> = ({ actors, films }) => {
 
   return (
     <>
-      {actors && (
+      {children && (
         <div className="block">
           <Slider
             {...settings}
             nextArrow={<NextArrow />}
             prevArrow={<PrevArrow />}
           >
-            {actors.map((actor) => (
-              <ActorCard key={actor.id} actorData={actor} />
-            ))}
-          </Slider>
-        </div>
-      )}
-
-      {films && (
-        <div className="block">
-          <Slider
-            {...settings}
-            nextArrow={<NextArrow />}
-            prevArrow={<PrevArrow />}
-          >
-            {films.map((film: any) => (
-              <ActorCard key={film.id} actorData={film} />
-            ))}
+            {children}
           </Slider>
         </div>
       )}

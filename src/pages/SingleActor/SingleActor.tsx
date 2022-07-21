@@ -1,8 +1,8 @@
 import React from 'react'
-import { Film } from '../../components/Logic/Film/Film';
+import { Actor } from '../../components/Logic/Actor/Actor';
 
 export const SingleFilm: React.FC = () => {
   return (
-    <Film />
+    <Actor />
   )
 };

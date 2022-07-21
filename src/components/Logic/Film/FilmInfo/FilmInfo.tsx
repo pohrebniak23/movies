@@ -1,8 +1,8 @@
 import React, { Fragment, useMemo, useState } from "react";
-import { dateConverter } from "../../../helpers/dateConverter";
-import { typeConverter } from "../../../helpers/typeConverter";
-import { IMovieInfo } from "../../../types/IMovieInfo";
-import { Button } from "../../UI/Button/Button";
+import { dateConverter } from "../../../../helpers/dateConverter";
+import { typeConverter } from "../../../../helpers/typeConverter";
+import { IMovieInfo } from "../../../../types/IMovieInfo";
+import { Button } from "../../../UI/Button/Button";
 import { AiOutlinePlayCircle } from "react-icons/ai";
 import { FcLike } from "react-icons/fc";
 import { BsCheck } from "react-icons/bs";
@@ -85,8 +85,6 @@ export const FilmInfo: React.FC<Props> = ({ info }) => {
           </div>
         ))}
       </div>
-
-      
     </div>
   );
 };

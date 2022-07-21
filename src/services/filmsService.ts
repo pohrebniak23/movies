@@ -28,6 +28,11 @@ export const filmsApi = createApi({
       query: (id) => ({
         url: `/person?field=id&search=${id}&token=${process.env.REACT_APP_TOKEN}`
       })
+    }),
+    getActorImageById: builder.query<any, any>({
+      query: (id) => ({
+        url: `/image?field=movieId&search=${id}&field=type&search=backdrops&token=${process.env.REACT_APP_TOKEN}`
+      })
     })
   })
 });

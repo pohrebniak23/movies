@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { filmsApi } from "../../../services/filmsService";
 import { Button } from "../../UI/Button/Button";
-import { Loader } from "../../UI/Loader/Loader";
+import { Loader } from "../../Simple/Loader/Loader";
 import { ListItems, MListItems } from "../ListItems/ListItems";
 import styles from "./LatestContent.module.sass";
 

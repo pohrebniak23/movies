@@ -19,7 +19,7 @@ export const Tabs: React.FC<Props> = ({ tabsList }) => {
       </TabList>
 
       {tabsList.map((item: any) => (
-        <TabPanel>{item.component}</TabPanel>
+        <TabPanel key={item.label}>{item.component}</TabPanel>
       ))}
     </TabsContainer>
   );

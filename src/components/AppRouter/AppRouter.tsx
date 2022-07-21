@@ -1,15 +1,14 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { PublicRoute } from "../../routes";
-import { Login } from "../Logic/Login/Login";
 import { Films } from "../../pages/Films/Films";
-import { SingleFilm } from "../../pages/SingleFilm/SingleFilm";
 import { Home } from "../../pages/Home/Home";
 import { NotFound } from "../../pages/NotFound/NotFound";
 import { Watch } from "../../pages/Watch/Watch";
 import { Serials } from "../../pages/Serials/Serials";
 import { Cartoons } from "../../pages/Cartoons/Cartoons";
-import { Actor } from "../../pages/Actor/Actor";
+import { Film } from "../Logic/Film/Film";
+import { Actor } from "../Logic/Actor/Actor";
 
 export enum RouteNames {
   HOME = "/",
@@ -31,10 +30,10 @@ export const AppRouter: React.FC = () => {
 
   return (
     <Routes>
-      <Route
+      {/* <Route
         path={RouteNames.LOGIN}
         element={<PublicRoute component={Login} isAuth={isAuth} />}
-      />
+      /> */}
       <Route
         path={RouteNames.HOME}
         element={<Home />}
@@ -45,7 +44,7 @@ export const AppRouter: React.FC = () => {
       />
       <Route
         path={RouteNames.FILMS_ITEM}
-        element={<SingleFilm />}
+        element={<Film />}
       />
       <Route
         path={RouteNames.SERIALS}
@@ -53,7 +52,7 @@ export const AppRouter: React.FC = () => {
       />
       <Route
         path={RouteNames.SERIALS_ITEM}
-        element={<SingleFilm />}
+        element={<Film />}
       />
       <Route
         path={RouteNames.CARTOONS}
@@ -61,7 +60,7 @@ export const AppRouter: React.FC = () => {
       />
       <Route
         path={RouteNames.SERIALS_ITEM}
-        element={<SingleFilm />}
+        element={<Film />}
       />
       <Route
         path={RouteNames.WATCH}

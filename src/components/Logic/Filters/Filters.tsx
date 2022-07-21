@@ -7,7 +7,7 @@ import {
   setYear,
 } from "../../../store/reducers/filtersSlice";
 import { Button } from "../../UI/Button/Button";
-import { Range } from "../../UI/Range/Range";
+import { Range } from "../../Simple/Range/Range";
 import { MdFilterList, MdArrowBackIosNew } from "react-icons/md";
 import styles from "./Filters.module.sass";
 import { CustomSelect } from "../../UI/CustomSelect/CustomSelect";
