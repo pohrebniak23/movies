@@ -11,6 +11,15 @@ export const DefaultSlider: React.FC<PropsWithChildren> = ({ children }) => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+    ]
   };
 
   const NextArrow = (props: any) => {
