@@ -47,16 +47,10 @@ export const DefaultSlider = ({ children }: DefaultSliderProps) => {
   };
 
   return (
-    children && (
-      <div className="block">
-        <Slider
-          {...settings}
-          nextArrow={<NextArrow />}
-          prevArrow={<PrevArrow />}
-        >
-          {children}
-        </Slider>
-      </div>
-    )
+    <div className="block">
+      <Slider {...settings} nextArrow={<NextArrow />} prevArrow={<PrevArrow />}>
+        {children}
+      </Slider>
+    </div>
   );
 };
