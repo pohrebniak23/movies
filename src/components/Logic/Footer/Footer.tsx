@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { RouteNames } from "../../AppRouter/AppRouter";
+import { RouteNames } from "../../Providers/AppRouter/AppRouter";
 import { ReactComponent as Logo } from "../../../assets/logo.svg";
 import styles from "./Footer.module.sass";
 

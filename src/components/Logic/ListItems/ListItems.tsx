@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import { Link } from 'react-router-dom';
 import { IMovie } from '../../../types/IMovie';
-import { Card } from '../../UI/Card/Card';
+import { FilmCard } from '../../Simple/FilmCard/FilmCard';
 import styles from './ListItems.module.sass';
 
 export const ListItems: React.FC<PropsWithChildren> = ({ children }) => {
@@ -30,7 +30,7 @@ module MListItems {
       <div className={styles.grid}>
         {cardsList?.map((card: IMovie) => (
           <Link to={`/films/${card.id}`} className={styles.link} key={card.id}>
-            <Card image={card.poster.url} title={card.names[0].name} length={card.movieLength} type={card.type} />
+            <FilmCard image={card.poster.url} title={card.names[0].name} length={card.movieLength} type={card.type} />
           </Link>
         ))}
       </div>

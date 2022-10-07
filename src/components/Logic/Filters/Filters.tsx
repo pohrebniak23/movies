@@ -7,11 +7,12 @@ import {
   setYear,
 } from "../../../store/reducers/filtersSlice";
 import { Button } from "../../UI/Button/Button";
-import { Range } from "../../UI/Range/Range";
+import { Range } from "../../Simple/Range/Range";
 import { MdFilterList, MdArrowBackIosNew } from "react-icons/md";
 import styles from "./Filters.module.sass";
 import { CustomSelect } from "../../UI/CustomSelect/CustomSelect";
 import classNames from "classnames";
+import { FilterItem, Genres } from "../../../types/IFilter";
 
 export const Filters: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -47,7 +48,7 @@ export const Filters: React.FC = () => {
     ],
     []
   );
-  const [genreOption, setGenreOption] = useState<any>(genreOptions[0]);
+  const [genreOption, setGenreOption] = useState<Genres>(genreOptions[0]);
 
   useEffect(() => {
     setYearData(year);
@@ -133,7 +134,7 @@ export const Filters: React.FC = () => {
           <h2 className={styles.title}>Фильтры</h2>
         </div>
         <div className={styles.content}>
-          {filtersList?.map((item: any) => (
+          {filtersList?.map((item: FilterItem) => (
             <div key={item.name} className={styles.item}>
               <h3 className={styles.name}>{item.name}</h3>
               {item.component}
