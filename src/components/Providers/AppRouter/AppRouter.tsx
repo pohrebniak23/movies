@@ -21,48 +21,21 @@ export enum RouteNames {
   WATCH = "/watch/:id",
   ACTOR = "/actor/:id",
   ACCOUNT = "/account",
-  SETTINGS = "/settings"
+  SETTINGS = "/settings",
 }
 
 export const AppRouter: React.FC = () => {
   return (
     <Routes>
-      <Route
-        path={RouteNames.HOME}
-        element={<Home />}
-      />
-      <Route
-        path={RouteNames.FILMS}
-        element={<Films />}
-      />
-      <Route
-        path={RouteNames.FILMS_ITEM}
-        element={<Film />}
-      />
-      <Route
-        path={RouteNames.SERIALS}
-        element={<Serials />}
-      />
-      <Route
-        path={RouteNames.SERIALS_ITEM}
-        element={<Film />}
-      />
-      <Route
-        path={RouteNames.CARTOONS}
-        element={<Cartoons />}
-      />
-      <Route
-        path={RouteNames.SERIALS_ITEM}
-        element={<Film />}
-      />
-      <Route
-        path={RouteNames.WATCH}
-        element={<Watch />}
-      />
-      <Route
-        path={RouteNames.ACTOR}
-        element={<Actor />}
-      />
+      <Route path={RouteNames.HOME} element={<Home />} />
+      <Route path={RouteNames.FILMS} element={<Films />} />
+      <Route path={RouteNames.FILMS_ITEM} element={<Film />} />
+      <Route path={RouteNames.SERIALS} element={<Serials />} />
+      <Route path={RouteNames.SERIALS_ITEM} element={<Film />} />
+      <Route path={RouteNames.CARTOONS} element={<Cartoons />} />
+      <Route path={RouteNames.SERIALS_ITEM} element={<Film />} />
+      <Route path={RouteNames.WATCH} element={<Watch />} />
+      <Route path={RouteNames.ACTOR} element={<Actor />} />
 
       {/* <Route
         path={RouteNames.ACCOUNT}
@@ -73,10 +46,7 @@ export const AppRouter: React.FC = () => {
         element={<PrivateRoute component={Settings} isAuth={isAuth} />}
       /> */}
 
-      <Route
-        path="*"
-        element={<NotFound />}
-      />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

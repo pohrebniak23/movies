@@ -21,7 +21,7 @@ export const Video: React.FC = () => {
     <div className={styles.video}>
       <div className="container">
         <h1 className={styles.title}>{movie?.name}</h1>
-        <div className={styles.frame} data-kinopoisk={id} id="kinobd"></div>
+        <div className={styles.frame} data-kinopoisk={id} id="kinobd" />
       </div>
     </div>
   );

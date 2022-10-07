@@ -1,4 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { MdFilterList, MdArrowBackIosNew } from "react-icons/md";
+import classNames from "classnames";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
 import {
   reset,
@@ -8,10 +10,8 @@ import {
 } from "../../../store/reducers/filtersSlice";
 import { Button } from "../../UI/Button/Button";
 import { Range } from "../../Simple/Range/Range";
-import { MdFilterList, MdArrowBackIosNew } from "react-icons/md";
 import styles from "./Filters.module.sass";
 import { CustomSelect } from "../../UI/CustomSelect/CustomSelect";
-import classNames from "classnames";
 import { FilterItem, Genres } from "../../../types/IFilter";
 
 export const Filters: React.FC = () => {
@@ -129,8 +129,7 @@ export const Filters: React.FC = () => {
             classname={styles.closeBtn}
             iconLeft={<MdArrowBackIosNew />}
             onClick={handleFilterOpen}
-          >
-          </Button>
+          />
           <h2 className={styles.title}>Фильтры</h2>
         </div>
         <div className={styles.content}>

@@ -1,9 +1,9 @@
 export interface Genres {
-  label: string,
-  value: string,
+  label: string;
+  value: string;
 }
 
 export interface FilterItem {
-  name: string,
-  component: JSX.Element
+  name: string;
+  component: JSX.Element;
 }

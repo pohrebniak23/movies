@@ -1,13 +1,13 @@
 import React, { Fragment, useMemo, useState } from "react";
+import { AiOutlinePlayCircle } from "react-icons/ai";
+import { FcLike } from "react-icons/fc";
+import { BsCheck } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import { dateConverter } from "../../../../helpers/dateConverter";
 import { typeConverter } from "../../../../helpers/typeConverter";
 import { IMovieInfo } from "../../../../types/IMovieInfo";
 import { Button } from "../../../UI/Button/Button";
-import { AiOutlinePlayCircle } from "react-icons/ai";
-import { FcLike } from "react-icons/fc";
-import { BsCheck } from "react-icons/bs";
 import styles from "./FilmInfo.module.sass";
-import { Link } from "react-router-dom";
 
 type Props = {
   info: IMovieInfo;

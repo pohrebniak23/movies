@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { FcLike } from "react-icons/fc";
 import { BsCheck } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import { IMovie } from "../../../types/IMovie";
 import { Button } from "../../UI/Button/Button";
 import { Rating } from "../Rating/Rating";
 import styles from "./CategoryItem.module.sass";
-import { Link } from "react-router-dom";
 
 type Props = {
   info: IMovie;

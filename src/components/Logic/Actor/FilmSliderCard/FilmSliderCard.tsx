@@ -14,7 +14,7 @@ export const FilmSliderCard: React.FC<Props> = ({ id, name }) => {
       {image?.docs[0] ? (
         <img src={image?.docs[0].url} alt="" className={styles.image} />
       ) : (
-        <div className={styles.poster}></div>
+        <div className={styles.poster} />
       )}
 
       <h2 className={styles.title}>{name}</h2>

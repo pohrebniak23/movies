@@ -1,6 +1,6 @@
 import React from "react";
-import { ICard } from "../../../types/ICard";
 import { BiTimeFive } from "react-icons/bi";
+import { ICard } from "../../../types/ICard";
 import styles from "./FilmCard.module.sass";
 
 export const FilmCard: React.FC<ICard> = ({ image, title, length, type }) => {

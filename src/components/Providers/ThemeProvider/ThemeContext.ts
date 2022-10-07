@@ -10,6 +10,8 @@ interface IThemeContext {
   setTheme: (theme: Themes) => void;
 }
 
-export const ThemeContext = createContext<IThemeContext>(null as any as IThemeContext);
+export const ThemeContext = createContext<IThemeContext>(
+  null as any as IThemeContext
+);
 
 export const LOCAL_STORAGE_THEME_KEY = "theme";

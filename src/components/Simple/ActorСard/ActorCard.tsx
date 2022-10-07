@@ -1,22 +1,18 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { IPerson } from '../../../types/IMovieInfo';
-import styles from './ActorCard.module.sass';
+import React from "react";
+import { Link } from "react-router-dom";
+import { IPerson } from "../../../types/IMovieInfo";
+import styles from "./ActorCard.module.sass";
 
 type Props = {
-  actorData: IPerson
-}
+  actorData: IPerson;
+};
 
 export const ActorCard: React.FC<Props> = ({ actorData }) => {
   return (
     <Link to={`/actor/${actorData.id}`} className={styles.actor}>
       <img className={styles.image} src={actorData.photo} alt="" />
-      <h3 className={styles.name}>
-        {actorData.name}
-      </h3>
-      <h4 className={styles.description}>
-        {actorData.description}
-      </h4>
+      <h3 className={styles.name}>{actorData.name}</h3>
+      <h4 className={styles.description}>{actorData.description}</h4>
     </Link>
-  )
-}
+  );
+};

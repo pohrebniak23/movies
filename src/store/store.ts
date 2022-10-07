@@ -5,13 +5,15 @@ import filtersSlice from "./reducers/filtersSlice";
 const rootReducer = combineReducers({
   filters: filtersSlice,
   [filmsApi.reducerPath]: filmsApi.reducer,
-})
-
-export const setupStore = () => configureStore({
-  reducer: rootReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(filmsApi.middleware),
 });
+
+export const setupStore = () =>
+  configureStore({
+    reducer: rootReducer,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware().concat(filmsApi.middleware),
+  });
 
 export type RootState = ReturnType<typeof rootReducer>;
 export type AppStore = ReturnType<typeof setupStore>;
-export type AppDispatch = AppStore['dispatch'];
+export type AppDispatch = AppStore["dispatch"];

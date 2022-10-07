@@ -1,7 +1,5 @@
 import React, { CSSProperties } from "react";
-import Select, {
-  SingleValueProps,
-} from "react-select";
+import Select, { SingleValueProps } from "react-select";
 import { Genres } from "../../../types/IFilter";
 
 type Props = {

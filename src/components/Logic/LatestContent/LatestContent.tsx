@@ -35,9 +35,7 @@ export const LatestContent: React.FC<Props> = ({ category, title }) => {
             <h2 className={styles.title}>{title}</h2>
             <Grid cardsList={movies.docs} />
 
-            {isLoading || isFetching && (
-              <Loader height="200px" />
-            )}
+            {isLoading || (isFetching && <Loader height="200px" />)}
             {movies.total > limit && (
               <Button
                 variant="white"

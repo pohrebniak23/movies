@@ -9,11 +9,15 @@ type Props = {
   setIsSearchOpen: (value: boolean) => void;
 };
 
-export const SearchItem: React.FC<Props> = ({ data, setIsActive, setIsSearchOpen }) => {
+export const SearchItem: React.FC<Props> = ({
+  data,
+  setIsActive,
+  setIsSearchOpen,
+}) => {
   const hideHandle = () => {
     setIsActive(false);
     setIsSearchOpen(false);
-  }
+  };
 
   return (
     <Link to={`/films/${data.id}`} className={styles.item} onClick={hideHandle}>

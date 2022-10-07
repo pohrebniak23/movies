@@ -1,20 +1,25 @@
 import React, { useMemo } from "react";
+import { useParams } from "react-router-dom";
 import { BackBtn } from "../../UI/BackBtn/BackBtn";
 import { Loader } from "../../Simple/Loader/Loader";
 import { FilmInfo } from "./FilmInfo/FilmInfo";
 import { Tabs } from "../../UI/Tabs/Tabs";
 import { filmsApi } from "../../../services/filmsService";
-import { useParams } from "react-router-dom";
 import styles from "./Film.module.sass";
 import { FilmActorsSlider } from "./FilmActorsSlider/FilmSlider";
 
 export const Film: React.FC = () => {
   const { id } = useParams();
   const { data: filmData } = filmsApi.useGetFilmByIdQuery(id);
-  
+
   const tabs = useMemo(
     () => [
-      { label: "Описание", component: <p className={styles.description}>{filmData?.description}</p> },
+      {
+        label: "Описание",
+        component: (
+          <p className={styles.description}>{filmData?.description}</p>
+        ),
+      },
       {
         label: "Актеры",
         component: <FilmActorsSlider actors={filmData?.persons} />,
@@ -33,7 +38,7 @@ export const Film: React.FC = () => {
             <FilmInfo info={filmData} />
           </div>
 
-          <Tabs tabsList={tabs}></Tabs>
+          <Tabs tabsList={tabs} />
         </div>
       ) : (
         <Loader height="500px" />

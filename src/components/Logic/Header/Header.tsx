@@ -1,12 +1,12 @@
 import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { RouteNames } from "../../Providers/AppRouter/AppRouter";
-import { Search } from "../Search/Search";
 import { FiMenu } from "react-icons/fi";
 import { ImFilm } from "react-icons/im";
 import { MdOutlineLocalMovies, MdChildCare } from "react-icons/md";
 import { GrClose } from "react-icons/gr";
 import { BiSearchAlt } from "react-icons/bi";
+import { Search } from "../Search/Search";
+import { RouteNames } from "../../Providers/AppRouter/AppRouter";
 import { DropDown } from "../../Simple/DropDown/DropDown";
 import { ReactComponent as Logo } from "../../../assets/logo.svg";
 import styles from "./Header.module.sass";

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
+import classNames from "classnames";
 import { useDebounce } from "../../../hooks/useDebounce";
 import { filmsApi } from "../../../services/filmsService";
 import { IMovie } from "../../../types/IMovie";
@@ -8,7 +9,6 @@ import { SearchItem } from "./SearchItem";
 import { Loader } from "../../Simple/Loader/Loader";
 import { useOnOutsideClick } from "../../../hooks/useOnOutsideClick";
 import styles from "./Search.module.sass";
-import classNames from "classnames";
 
 type Props = {
   isSearchOpen: boolean;
@@ -24,14 +24,16 @@ export const Search: React.FC<Props> = ({ isSearchOpen, setIsSearchOpen }) => {
     data: list,
     isFetching,
     isLoading,
-  } = filmsApi.useGetFilmByNameQuery(debouncedValue, { skip: debouncedValue.length === 0 });
+  } = filmsApi.useGetFilmByNameQuery(debouncedValue, {
+    skip: debouncedValue.length === 0,
+  });
 
   const searchHandle = (value: string) => {
     setSearch(value);
   };
 
   const { innerBorderRef } = useOnOutsideClick(() => {
-    setIsActive(false)
+    setIsActive(false);
   });
 
   const closeSearch = () => {

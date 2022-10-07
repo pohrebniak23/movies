@@ -31,13 +31,7 @@ export const ActorInfo: React.FC<Props> = ({ info }) => {
         data: info.movies.length,
       },
     ],
-    [
-      info.profession,
-      info.sex,
-      info.growth,
-      info.movies,
-      info.birthday,
-    ]
+    [info.profession, info.sex, info.growth, info.movies, info.birthday]
   );
 
   return (

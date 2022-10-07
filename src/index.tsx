@@ -5,7 +5,6 @@ import { App } from "./App";
 import { setupStore } from "./store/store";
 import "./assets/sass/main.sass";
 import { ThemeProvider } from "./components/Providers/ThemeProvider/ThemeProvider";
-import { StrictMode } from "react";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -14,13 +13,11 @@ const root = ReactDOM.createRoot(
 const store = setupStore();
 
 root.render(
-  <StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
-        <ThemeProvider>
-          <App />
-        </ThemeProvider>
-      </Provider>
-    </BrowserRouter>
-  </StrictMode>
+  <BrowserRouter>
+    <Provider store={store}>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </Provider>
+  </BrowserRouter>
 );
