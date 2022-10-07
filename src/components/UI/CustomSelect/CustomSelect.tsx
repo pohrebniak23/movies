@@ -18,7 +18,7 @@ const customStyles: any = {
   control: (provided: CSSProperties) => ({
     ...provided,
     padding: "10px 12px",
-    border: "1px solid var(--color-gray)",
+    border: "1px solid var(--additional-color)",
     borderRadius: "8px",
     fontSize: "14px",
   }),
