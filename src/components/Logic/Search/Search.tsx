@@ -4,11 +4,10 @@ import { IoMdClose } from 'react-icons/io';
 import classNames from 'classnames';
 import { useDebounce } from '../../../hooks/useDebounce';
 import { filmsApi } from '../../../services/filmsService';
-import { IMovie } from '../../../types/IMovie';
-import { SearchItem } from './SearchItem';
 import { Loader } from '../../Simple/Loader/Loader';
 import { useOnOutsideClick } from '../../../hooks/useOnOutsideClick';
 import styles from './Search.module.scss';
+import { SearchContent } from './SearchContent/SearchContent';
 
 type Props = {
   isSearchOpen: boolean;
@@ -70,14 +69,11 @@ export const Search: React.FC<Props> = ({ isSearchOpen, setIsSearchOpen }) => {
           {isFetching || isLoading ? (
             <Loader height="100px" />
           ) : (
-            list?.docs?.map((item: IMovie) => (
-              <SearchItem
-                key={item.id}
-                data={item}
-                setIsActive={setIsActive}
-                setIsSearchOpen={setIsSearchOpen}
-              />
-            ))
+            <SearchContent
+              list={list}
+              setIsActive={setIsActive}
+              setIsSearchOpen={setIsSearchOpen}
+            />
           )}
         </div>
       )}

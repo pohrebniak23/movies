@@ -1,7 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { IMovie } from '../../../types/IMovie';
-import styles from './Search.module.scss';
+import { IMovie } from '../../../../types/IMovie';
+import styles from './SearchItem.module.scss';
 
 type Props = {
   data: IMovie;
@@ -21,7 +20,12 @@ export const SearchItem: React.FC<Props> = ({
 
   return (
     <Link to={`/films/${data.id}`} className={styles.item} onClick={hideHandle}>
-      <img src={data.poster.url} alt="" className={styles.image} />
+      {data.poster !== null ? (
+        <img src={data.poster.url} alt="" className={styles.image} />
+      ) : (
+        <div className={styles.plugged} />
+      )}
+
       <div className={styles.info}>
         <h2 className={styles.name}>{data.name}</h2>
         <span className={styles.properties}>
