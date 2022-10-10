@@ -1,11 +1,11 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Tab, Tabs as TabsContainer, TabList, TabPanel } from "react-tabs";
 import "./Tabs.sass";
 
 type Props = {
   tabsList: {
     label: string;
-    component: JSX.Element;
+    component: ReactNode;
   }[];
 };
 

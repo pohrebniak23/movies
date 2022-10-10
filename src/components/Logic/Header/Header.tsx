@@ -50,22 +50,27 @@ export const Header: React.FC = () => {
             setIsSearchOpen={setIsSearchOpen}
           />
 
-          <ThemeSwitcher />
+          <div className={styles.rightContent}>
+            <ThemeSwitcher />
 
-          <DropDown
-            dropDownItems={menuItems}
-            isOpen={isDropOpen}
-            setIsDropOpen={setIsDropOpen}
-          />
+            <div className={styles.menu}>
+              <BiSearchAlt
+                className={styles.searchIcon}
+                onClick={toogleSearch}
+              />
+              {!isDropOpen && (
+                <FiMenu className={styles.humburger} onClick={toggleDrop} />
+              )}
+              {isDropOpen && (
+                <GrClose className={styles.humburger} onClick={toggleDrop} />
+              )}
 
-          <div className={styles.nav}>
-            <BiSearchAlt className={styles.searchIcon} onClick={toogleSearch} />
-            {!isDropOpen && (
-              <FiMenu className={styles.humburger} onClick={toggleDrop} />
-            )}
-            {isDropOpen && (
-              <GrClose className={styles.humburger} onClick={toggleDrop} />
-            )}
+              <DropDown
+                dropDownItems={menuItems}
+                isOpen={isDropOpen}
+                setIsDropOpen={setIsDropOpen}
+              />
+            </div>
           </div>
         </div>
       </div>

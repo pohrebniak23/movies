@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { filmsApi } from "../../../services/filmsService";
 import { BackBtn } from "../../UI/BackBtn/BackBtn";
@@ -12,15 +12,6 @@ export const Actor: React.FC = () => {
   const { id } = useParams();
   const { data: person } = filmsApi.useGetActorByIdQuery(id);
 
-  const tabs = useMemo(
-    () => [
-      {
-        label: "Фильмы",
-        component: <ActorFilmsSlider films={person?.movies} />,
-      },
-    ],
-    [person]
-  );
   return (
     <div className="container">
       {person ? (
@@ -31,7 +22,14 @@ export const Actor: React.FC = () => {
             <ActorInfo info={person} />
           </div>
 
-          <Tabs tabsList={tabs} />
+          <Tabs
+            tabsList={[
+              {
+                label: "Фильмы",
+                component: <ActorFilmsSlider films={person.movies} />,
+              },
+            ]}
+          />
         </div>
       ) : (
         <Loader height="500px" />

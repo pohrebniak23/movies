@@ -9,12 +9,10 @@ type Props = {
 
 export const ActorFilmsSlider: React.FC<Props> = ({ films }) => {
   return (
-    films && (
-      <DefaultSlider>
-        {films.slice(0, 5).map((film) => (
-          <FilmSliderCard key={film.id} id={film.id} name={film.name} />
-        ))}
-      </DefaultSlider>
-    )
+    <DefaultSlider>
+      {films.slice(0, 5).map((film) => (
+        <FilmSliderCard key={film.id} id={film.id} name={film.name} />
+      ))}
+    </DefaultSlider>
   );
 };
