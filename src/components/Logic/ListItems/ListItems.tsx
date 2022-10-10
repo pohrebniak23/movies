@@ -1,8 +1,8 @@
-import React, { PropsWithChildren } from "react";
-import { Link } from "react-router-dom";
-import { IMovie } from "../../../types/IMovie";
-import { FilmCard } from "../../Simple/FilmCard/FilmCard";
-import styles from "./ListItems.module.sass";
+import React, { PropsWithChildren } from 'react';
+import { Link } from 'react-router-dom';
+import { IMovie } from '../../../types/IMovie';
+import { FilmCard } from '../../Simple/FilmCard/FilmCard';
+import styles from './ListItems.module.scss';
 
 export const ListItems: React.FC<PropsWithChildren> = ({ children }) => {
   return <div className={styles.listItems}>{children}</div>;

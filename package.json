@@ -8,8 +8,8 @@
     "build": "react-scripts build",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
-    "lint:sass": "npx stylelint \"**/*.sass\"",
-    "lint:sass:fix": "npx stylelint \"**/*.sass\" --fix"
+    "lint:scss": "npx stylelint \"**/*.scss\"",
+    "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
@@ -41,19 +41,20 @@
     "eslint": "^8.24.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "sass": "^1.53.0",
-    "typescript": "^4.7.4",
-    "web-vitals": "^2.1.4",
-    "eslint-config-prettier": "^8.5.0",
     "prettier": "^2.7.1",
-    "stylelint": "^14.12.1",
+    "sass": "^1.53.0",
+    "stylelint": "^14.13.0",
+    "stylelint-config-sass-guidelines": "^9.0.1",
     "stylelint-config-standard": "^28.0.0",
-    "stylelint-scss": "^4.3.0"
+    "stylelint-scss": "^4.3.0",
+    "typescript": "^4.7.4",
+    "web-vitals": "^2.1.4"
   },
   "browserslist": {
     "production": [

@@ -1,7 +1,7 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { MdArrowBackIosNew } from "react-icons/md";
-import styles from "./BackBtn.module.sass";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { MdArrowBackIosNew } from 'react-icons/md';
+import styles from './BackBtn.module.scss';
 
 export const BackBtn: React.FC = () => {
   const navigate = useNavigate();

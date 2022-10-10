@@ -1,12 +1,12 @@
-import React, { useMemo } from "react";
-import { useParams } from "react-router-dom";
-import { BackBtn } from "../../UI/BackBtn/BackBtn";
-import { Loader } from "../../Simple/Loader/Loader";
-import { FilmInfo } from "./FilmInfo/FilmInfo";
-import { Tabs } from "../../UI/Tabs/Tabs";
-import { filmsApi } from "../../../services/filmsService";
-import styles from "./Film.module.sass";
-import { FilmActorsSlider } from "./FilmActorsSlider/FilmSlider";
+import React, { useMemo } from 'react';
+import { useParams } from 'react-router-dom';
+import { BackBtn } from '../../UI/BackBtn/BackBtn';
+import { Loader } from '../../Simple/Loader/Loader';
+import { FilmInfo } from './FilmInfo/FilmInfo';
+import { Tabs } from '../../UI/Tabs/Tabs';
+import { filmsApi } from '../../../services/filmsService';
+import styles from './Film.module.scss';
+import { FilmActorsSlider } from './FilmActorsSlider/FilmSlider';
 
 export const Film: React.FC = () => {
   const { id } = useParams();
@@ -15,17 +15,17 @@ export const Film: React.FC = () => {
   const tabs = useMemo(
     () => [
       {
-        label: "Описание",
+        label: 'Описание',
         component: (
           <p className={styles.description}>{filmData?.description}</p>
         ),
       },
       {
-        label: "Актеры",
+        label: 'Актеры',
         component: <FilmActorsSlider actors={filmData?.persons} />,
       },
     ],
-    [filmData]
+    [filmData],
   );
 
   return (

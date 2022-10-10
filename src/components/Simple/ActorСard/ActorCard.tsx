@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { IPerson } from "../../../types/IMovieInfo";
-import styles from "./ActorCard.module.sass";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { IPerson } from '../../../types/IMovieInfo';
+import styles from './ActorCard.module.scss';
 
 type Props = {
   actorData: IPerson;

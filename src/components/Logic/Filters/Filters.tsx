@@ -1,18 +1,18 @@
-import React, { useEffect, useMemo, useState } from "react";
-import { MdFilterList, MdArrowBackIosNew } from "react-icons/md";
-import classNames from "classnames";
-import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
+import React, { useEffect, useMemo, useState } from 'react';
+import { MdFilterList, MdArrowBackIosNew } from 'react-icons/md';
+import classNames from 'classnames';
+import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import {
   reset,
   setGenre,
   setRating,
   setYear,
-} from "../../../store/reducers/filtersSlice";
-import { Button } from "../../UI/Button/Button";
-import { Range } from "../../Simple/Range/Range";
-import styles from "./Filters.module.sass";
-import { CustomSelect } from "../../UI/CustomSelect/CustomSelect";
-import { FilterItem, Genres } from "../../../types/IFilter";
+} from '../../../store/reducers/filtersSlice';
+import { Button } from '../../UI/Button/Button';
+import { Range } from '../../Simple/Range/Range';
+import styles from './Filters.module.scss';
+import { CustomSelect } from '../../UI/CustomSelect/CustomSelect';
+import { FilterItem, Genres } from '../../../types/IFilter';
 
 export const Filters: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -24,29 +24,29 @@ export const Filters: React.FC = () => {
 
   const genreOptions = useMemo(
     () => [
-      { label: "Все жанры", value: "" },
-      { label: "Биографии", value: "биография" },
-      { label: "Боевики", value: "боевик" },
-      { label: "Военные", value: "военный" },
-      { label: "Детективы", value: "детектив" },
-      { label: "Детские", value: "детский" },
-      { label: "Документальные", value: "документальный" },
-      { label: "Драмы", value: "драма" },
-      { label: "Исторические", value: "история" },
-      { label: "Комедии", value: "комедия" },
-      { label: "Короткометражки", value: "короткометражка" },
-      { label: "Криминал", value: "криминал" },
-      { label: "Музыкальные", value: "музыка" },
-      { label: "Семейные", value: "семейный" },
-      { label: "Новости", value: "новости" },
-      { label: "Приключения", value: "приключения" },
-      { label: "Спортивные", value: "спорт" },
-      { label: "Триллеры", value: "триллер" },
-      { label: "Ужасы", value: "ужасы" },
-      { label: "Фантастика", value: "фантастика" },
-      { label: "Фэнтези", value: "фэнтези" },
+      { label: 'Все жанры', value: '' },
+      { label: 'Биографии', value: 'биография' },
+      { label: 'Боевики', value: 'боевик' },
+      { label: 'Военные', value: 'военный' },
+      { label: 'Детективы', value: 'детектив' },
+      { label: 'Детские', value: 'детский' },
+      { label: 'Документальные', value: 'документальный' },
+      { label: 'Драмы', value: 'драма' },
+      { label: 'Исторические', value: 'история' },
+      { label: 'Комедии', value: 'комедия' },
+      { label: 'Короткометражки', value: 'короткометражка' },
+      { label: 'Криминал', value: 'криминал' },
+      { label: 'Музыкальные', value: 'музыка' },
+      { label: 'Семейные', value: 'семейный' },
+      { label: 'Новости', value: 'новости' },
+      { label: 'Приключения', value: 'приключения' },
+      { label: 'Спортивные', value: 'спорт' },
+      { label: 'Триллеры', value: 'триллер' },
+      { label: 'Ужасы', value: 'ужасы' },
+      { label: 'Фантастика', value: 'фантастика' },
+      { label: 'Фэнтези', value: 'фэнтези' },
     ],
-    []
+    [],
   );
   const [genreOption, setGenreOption] = useState<Genres>(genreOptions[0]);
 
@@ -57,7 +57,7 @@ export const Filters: React.FC = () => {
 
   const filtersList = [
     {
-      name: "Год выпуска:",
+      name: 'Год выпуска:',
       component: (
         <Range
           data={yearData}
@@ -68,7 +68,7 @@ export const Filters: React.FC = () => {
       ),
     },
     {
-      name: "Рейтинг:",
+      name: 'Рейтинг:',
       component: (
         <Range
           data={ratingData}
@@ -79,7 +79,7 @@ export const Filters: React.FC = () => {
       ),
     },
     {
-      name: "Жанр:",
+      name: 'Жанр:',
       component: (
         <CustomSelect
           selectedOption={genreOption}
@@ -95,10 +95,10 @@ export const Filters: React.FC = () => {
     dispatch(setRating([ratingData.min, ratingData.max]));
     dispatch(
       setGenre(
-        genreOption.value !== ""
+        genreOption.value !== ''
           ? `field=genres.name&search=${genreOption.value}`
-          : ""
-      )
+          : '',
+      ),
     );
     setFilterOpen(!filterOpen);
   };

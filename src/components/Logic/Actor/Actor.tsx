@@ -1,12 +1,12 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { filmsApi } from "../../../services/filmsService";
-import { BackBtn } from "../../UI/BackBtn/BackBtn";
-import { Loader } from "../../Simple/Loader/Loader";
-import { Tabs } from "../../UI/Tabs/Tabs";
-import { ActorInfo } from "./ActorInfo/ActorInfo";
-import styles from "./Actor.module.sass";
-import { ActorFilmsSlider } from "./ActorFilmsSlider/ActorFilmsSlider";
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import { filmsApi } from '../../../services/filmsService';
+import { BackBtn } from '../../UI/BackBtn/BackBtn';
+import { Loader } from '../../Simple/Loader/Loader';
+import { Tabs } from '../../UI/Tabs/Tabs';
+import { ActorInfo } from './ActorInfo/ActorInfo';
+import styles from './Actor.module.scss';
+import { ActorFilmsSlider } from './ActorFilmsSlider/ActorFilmsSlider';
 
 export const Actor: React.FC = () => {
   const { id } = useParams();
@@ -25,7 +25,7 @@ export const Actor: React.FC = () => {
           <Tabs
             tabsList={[
               {
-                label: "Фильмы",
+                label: 'Фильмы',
                 component: <ActorFilmsSlider films={person.movies} />,
               },
             ]}

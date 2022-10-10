@@ -1,6 +1,6 @@
-import React from "react";
-import { filmsApi } from "../../../../services/filmsService";
-import styles from "./FilmSliderCard.module.sass";
+import React from 'react';
+import { filmsApi } from '../../../../services/filmsService';
+import styles from './FilmSliderCard.module.scss';
 
 type Props = {
   id: number;

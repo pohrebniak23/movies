@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { IMovie } from "../../../types/IMovie";
-import styles from "./Search.module.sass";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { IMovie } from '../../../types/IMovie';
+import styles from './Search.module.scss';
 
 type Props = {
   data: IMovie;

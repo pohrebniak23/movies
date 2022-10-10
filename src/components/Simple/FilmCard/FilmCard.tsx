@@ -1,9 +1,9 @@
-import React from "react";
-import { BiTimeFive } from "react-icons/bi";
-import { ICard } from "../../../types/ICard";
-import styles from "./FilmCard.module.sass";
+import React from 'react';
+import { BiTimeFive } from 'react-icons/bi';
+import { ICard } from '../../../types/ICard';
+import styles from './FilmCard.module.scss';
 
-export const FilmCard: React.FC<ICard> = ({ image, title, length, type }) => {
+export const FilmCard: React.FC<ICard> = ({ image, title, length }) => {
   return (
     <div className={styles.card}>
       <img src={image} alt="" className={styles.image} />

@@ -1,13 +1,13 @@
-import React, { Fragment, useMemo, useState } from "react";
-import { AiOutlinePlayCircle } from "react-icons/ai";
-import { FcLike } from "react-icons/fc";
-import { BsCheck } from "react-icons/bs";
-import { Link } from "react-router-dom";
-import { dateConverter } from "../../../../helpers/dateConverter";
-import { typeConverter } from "../../../../helpers/typeConverter";
-import { IMovieInfo } from "../../../../types/IMovieInfo";
-import { Button } from "../../../UI/Button/Button";
-import styles from "./FilmInfo.module.sass";
+import React, { Fragment, useMemo, useState } from 'react';
+import { AiOutlinePlayCircle } from 'react-icons/ai';
+import { FcLike } from 'react-icons/fc';
+import { BsCheck } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
+import { dateConverter } from '../../../../helpers/dateConverter';
+import { typeConverter } from '../../../../helpers/typeConverter';
+import { IMovieInfo } from '../../../../types/IMovieInfo';
+import { Button } from '../../../UI/Button/Button';
+import styles from './FilmInfo.module.scss';
 
 type Props = {
   info: IMovieInfo;
@@ -23,29 +23,29 @@ export const FilmInfo: React.FC<Props> = ({ info }) => {
   const infoList = useMemo(
     () => [
       {
-        title: "Страна: ",
+        title: 'Страна: ',
         data: info.countries.map((cntr, id) => (
           <Fragment key={cntr.name}>
-            {id ? ", " : ""}
+            {id ? ', ' : ''}
             {cntr.name}
           </Fragment>
         )),
       },
-      { title: "Слоган: ", data: info.slogan },
+      { title: 'Слоган: ', data: info.slogan },
       {
-        title: "Жанр:",
+        title: 'Жанр:',
         data: info.genres.map((gnr, id) => (
           <Fragment key={gnr.name}>
-            {id ? ", " : ""}
+            {id ? ', ' : ''}
             {gnr.name}
           </Fragment>
         )),
       },
       {
-        title: "Время: ",
+        title: 'Время: ',
         data: info.movieLength ? `${info.movieLength} мин` : null,
       },
-      { title: "Премьера в мире: ", data: dateConverter(info.premiere?.world) },
+      { title: 'Премьера в мире: ', data: dateConverter(info.premiere?.world) },
     ],
     [
       info.countries,
@@ -53,7 +53,7 @@ export const FilmInfo: React.FC<Props> = ({ info }) => {
       info.movieLength,
       info.premiere?.world,
       info.slogan,
-    ]
+    ],
   );
 
   return (
@@ -66,11 +66,11 @@ export const FilmInfo: React.FC<Props> = ({ info }) => {
           </Button>
         </Link>
         <Button
-          variant={isSaved ? "saved" : "notSaved"}
+          variant={isSaved ? 'saved' : 'notSaved'}
           iconLeft={isSaved ? <BsCheck /> : <FcLike />}
           onClick={saveToFavourite}
         >
-          {isSaved ? "Сохранено" : "Сохранить"}
+          {isSaved ? 'Сохранено' : 'Сохранить'}
         </Button>
       </div>
 
@@ -79,7 +79,7 @@ export const FilmInfo: React.FC<Props> = ({ info }) => {
         {infoList.map((item) => (
           <div key={item.title} className={styles.gridItem}>
             <p>{item.title}</p>
-            {item.data ? <span>{item.data}</span> : "-"}
+            {item.data ? <span>{item.data}</span> : '-'}
           </div>
         ))}
       </div>

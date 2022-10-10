@@ -1,7 +1,7 @@
-import React from "react";
-import { CategoryList } from "../../components/Logic/CategoryList/CategoryList";
-import { Filters } from "../../components/Logic/Filters/Filters";
-import "./Films.sass";
+import React from 'react';
+import { CategoryList } from '../../components/Logic/CategoryList/CategoryList';
+import { Filters } from '../../components/Logic/Filters/Filters';
+import './Films.scss';
 
 export const Films: React.FC = () => {
   return (

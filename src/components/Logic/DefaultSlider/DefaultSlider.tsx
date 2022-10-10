@@ -1,9 +1,9 @@
-import React, { PropsWithChildren, ReactNode, useMemo } from "react";
-import { GrNext, GrPrevious } from "react-icons/gr";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "./DefaultSlider.sass";
+import { ReactNode } from 'react';
+import { GrNext, GrPrevious } from 'react-icons/gr';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import './DefaultSlider.scss';
 
 const NextArrow = (props: any) => {
   const { onClick } = props;

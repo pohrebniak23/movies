@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface InitialState {
   year: {
@@ -21,11 +21,11 @@ export const initialState: InitialState = {
     min: 5,
     max: 10,
   },
-  genre: "",
+  genre: '',
 };
 
 const filtersSlice = createSlice({
-  name: "filterSlice",
+  name: 'filterSlice',
   initialState,
   reducers: {
     setYear(state, action: PayloadAction<number[]>) {

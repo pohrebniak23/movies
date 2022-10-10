@@ -1,16 +1,16 @@
-import React, { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
-import { FiMenu } from "react-icons/fi";
-import { ImFilm } from "react-icons/im";
-import { MdOutlineLocalMovies, MdChildCare } from "react-icons/md";
-import { GrClose } from "react-icons/gr";
-import { BiSearchAlt } from "react-icons/bi";
-import { Search } from "../Search/Search";
-import { RouteNames } from "../../Providers/AppRouter/AppRouter";
-import { DropDown } from "../../Simple/DropDown/DropDown";
-import { ReactComponent as Logo } from "../../../assets/logo.svg";
-import styles from "./Header.module.sass";
-import { ThemeSwitcher } from "../ThemeSwitcher";
+import React, { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FiMenu } from 'react-icons/fi';
+import { ImFilm } from 'react-icons/im';
+import { MdOutlineLocalMovies, MdChildCare } from 'react-icons/md';
+import { GrClose } from 'react-icons/gr';
+import { BiSearchAlt } from 'react-icons/bi';
+import { Search } from '../Search/Search';
+import { RouteNames } from '../../Providers/AppRouter/AppRouter';
+import { DropDown } from '../../Simple/DropDown/DropDown';
+import { ReactComponent as Logo } from '../../../assets/logo.svg';
+import styles from './Header.module.scss';
+import { ThemeSwitcher } from '../ThemeSwitcher';
 
 export const Header: React.FC = () => {
   const [isDropOpen, setIsDropOpen] = useState<boolean>(false);
@@ -18,15 +18,15 @@ export const Header: React.FC = () => {
 
   const menuItems = useMemo(
     () => [
-      { name: "Фильмы", link: RouteNames.FILMS, icon: <ImFilm /> },
+      { name: 'Фильмы', link: RouteNames.FILMS, icon: <ImFilm /> },
       {
-        name: "Сериалы",
+        name: 'Сериалы',
         link: RouteNames.SERIALS,
         icon: <MdOutlineLocalMovies />,
       },
-      { name: "Мультфильмы", link: RouteNames.CARTOONS, icon: <MdChildCare /> },
+      { name: 'Мультфильмы', link: RouteNames.CARTOONS, icon: <MdChildCare /> },
     ],
-    []
+    [],
   );
 
   const toggleDrop = () => {

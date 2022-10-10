@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { filmsApi } from "../../../services/filmsService";
-import styles from "./Video.module.sass";
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { filmsApi } from '../../../services/filmsService';
+import styles from './Video.module.scss';
 
 export const Video: React.FC = () => {
   const { id } = useParams();
   const { data: movie } = filmsApi.useGetFilmByIdQuery(id);
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://kinobd.ru/js/player_.js";
+    const script = document.createElement('script');
+    script.src = 'https://kinobd.ru/js/player_.js';
     document.body.appendChild(script);
 
     return () => {

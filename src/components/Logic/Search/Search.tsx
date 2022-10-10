@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { BiSearchAlt } from "react-icons/bi";
-import { IoMdClose } from "react-icons/io";
-import classNames from "classnames";
-import { useDebounce } from "../../../hooks/useDebounce";
-import { filmsApi } from "../../../services/filmsService";
-import { IMovie } from "../../../types/IMovie";
-import { SearchItem } from "./SearchItem";
-import { Loader } from "../../Simple/Loader/Loader";
-import { useOnOutsideClick } from "../../../hooks/useOnOutsideClick";
-import styles from "./Search.module.sass";
+import React, { useState } from 'react';
+import { BiSearchAlt } from 'react-icons/bi';
+import { IoMdClose } from 'react-icons/io';
+import classNames from 'classnames';
+import { useDebounce } from '../../../hooks/useDebounce';
+import { filmsApi } from '../../../services/filmsService';
+import { IMovie } from '../../../types/IMovie';
+import { SearchItem } from './SearchItem';
+import { Loader } from '../../Simple/Loader/Loader';
+import { useOnOutsideClick } from '../../../hooks/useOnOutsideClick';
+import styles from './Search.module.scss';
 
 type Props = {
   isSearchOpen: boolean;
@@ -16,7 +16,7 @@ type Props = {
 };
 
 export const Search: React.FC<Props> = ({ isSearchOpen, setIsSearchOpen }) => {
-  const [search, setSearch] = useState<string>("");
+  const [search, setSearch] = useState<string>('');
   const { debouncedValue } = useDebounce(search, 300);
   const [isActive, setIsActive] = useState(false);
 
@@ -45,7 +45,7 @@ export const Search: React.FC<Props> = ({ isSearchOpen, setIsSearchOpen }) => {
       ref={innerBorderRef}
       className={classNames(
         styles.wrapper,
-        isSearchOpen && styles.wrapperActive
+        isSearchOpen && styles.wrapperActive,
       )}
     >
       <input

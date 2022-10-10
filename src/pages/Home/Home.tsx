@@ -1,6 +1,6 @@
-import React from "react";
-import { Banner } from "../../components/Logic/Banner/Banner";
-import { LatestContent } from "../../components/Logic/LatestContent/LatestContent";
+import React from 'react';
+import { Banner } from '../../components/Logic/Banner/Banner';
+import { LatestContent } from '../../components/Logic/LatestContent/LatestContent';
 
 export const Home: React.FC = () => {
   return (

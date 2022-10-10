@@ -1,0 +1,54 @@
+.banner {
+  margin-top: -88px;
+  z-index: 1;
+  position: relative;
+}
+
+.video {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+
+  @media (max-width: 480px) {
+    height: 400px;
+  }
+}
+
+.info {
+  position: absolute;
+  left: 0;
+  top: 200px;
+  width: 100%;
+
+  @media (max-width: 480px) {
+    top: 170px;
+  }
+}
+
+.title {
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 24px;
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+  }
+}
+
+.description {
+  color: #fff;
+  font-size: 18px;
+  max-width: 600px;
+  margin-bottom: 24px;
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}

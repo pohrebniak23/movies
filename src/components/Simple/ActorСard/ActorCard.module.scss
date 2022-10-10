@@ -1,0 +1,24 @@
+.actor {
+  font-size: 30px;
+  color: #fff;
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.name {
+  font-size: 18px;
+  margin-top: 16px;
+}
+
+.description {
+  font-size: 14px;
+  color: var(additional-color);
+  font-weight: 400;
+  margin-top: 8px;
+}

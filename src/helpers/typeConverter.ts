@@ -1,16 +1,16 @@
 export const typeConverter = (filmType: number) => {
   switch (filmType) {
     case 1:
-      return "фильм";
+      return 'фильм';
 
     case 3:
-      return "мультфильм";
+      return 'мультфильм';
 
     case 2:
     case 5:
-      return "сериал";
+      return 'сериал';
 
     default:
-      return "фильм";
+      return 'фильм';
   }
 };

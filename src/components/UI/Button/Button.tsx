@@ -1,6 +1,6 @@
-import React, { PropsWithChildren } from "react";
-import classNames from "classnames";
-import styles from "./Button.module.sass";
+import React, { PropsWithChildren } from 'react';
+import classNames from 'classnames';
+import styles from './Button.module.scss';
 
 export interface IButton {
   classname?: string;
@@ -18,21 +18,21 @@ export const Button: React.FC<PropsWithChildren<IButton>> = React.memo(
         className={classNames(
           classname,
           styles.button,
-          variant === "stroke" && styles.stroke,
-          variant === "outline" && styles.outline,
-          variant === "white" && styles.white,
-          variant === "saved" && styles.saved,
-          variant === "notSaved" && styles.notSaved,
-          variant === "savedBlack" && styles.savedBlack,
-          variant === "notSavedBlack" && styles.notSavedBlack
+          variant === 'stroke' && styles.stroke,
+          variant === 'outline' && styles.outline,
+          variant === 'white' && styles.white,
+          variant === 'saved' && styles.saved,
+          variant === 'notSaved' && styles.notSaved,
+          variant === 'savedBlack' && styles.savedBlack,
+          variant === 'notSavedBlack' && styles.notSavedBlack,
         )}
         {...props}
       >
         {iconLeft}
         <span
           className={classNames(
-            iconLeft ? styles.leftM : "",
-            iconRight ? styles.rightM : ""
+            iconLeft ? styles.leftM : '',
+            iconRight ? styles.rightM : '',
           )}
         >
           {children}
@@ -40,5 +40,5 @@ export const Button: React.FC<PropsWithChildren<IButton>> = React.memo(
         {iconRight}
       </button>
     );
-  }
+  },
 );

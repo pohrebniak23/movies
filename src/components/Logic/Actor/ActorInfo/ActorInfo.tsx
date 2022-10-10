@@ -1,7 +1,7 @@
-import React, { Fragment, useMemo } from "react";
-import { IActor } from "../../../../types/IActor";
-import styles from "./ActorInfo.module.sass";
-import { dateConverter } from "../../../../helpers/dateConverter";
+import React, { Fragment, useMemo } from 'react';
+import { IActor } from '../../../../types/IActor';
+import styles from './ActorInfo.module.scss';
+import { dateConverter } from '../../../../helpers/dateConverter';
 
 type Props = {
   info: IActor;
@@ -11,27 +11,27 @@ export const ActorInfo: React.FC<Props> = ({ info }) => {
   const infoList = useMemo(
     () => [
       {
-        title: "Профессия:",
+        title: 'Профессия:',
         data: info.profession.map((prof, id) => (
           <Fragment key={prof.value}>
-            {id ? ", " : ""}
+            {id ? ', ' : ''}
             {prof.value}
           </Fragment>
         )),
       },
-      { title: "Дата рождения: ", data: dateConverter(info.birthday) },
+      { title: 'Дата рождения: ', data: dateConverter(info.birthday) },
       {
-        title: "Пол: ",
+        title: 'Пол: ',
         data: info.sex,
       },
-      { title: "Рост: ", data: info.growth },
+      { title: 'Рост: ', data: info.growth },
 
       {
-        title: "Всего фильмов: ",
+        title: 'Всего фильмов: ',
         data: info.movies.length,
       },
     ],
-    [info.profession, info.sex, info.growth, info.movies, info.birthday]
+    [info.profession, info.sex, info.growth, info.movies, info.birthday],
   );
 
   return (
@@ -43,7 +43,7 @@ export const ActorInfo: React.FC<Props> = ({ info }) => {
         {infoList.map((item) => (
           <div key={item.title} className={styles.gridItem}>
             <p>{item.title}</p>
-            {item.data ? <span>{item.data}</span> : "-"}
+            {item.data ? <span>{item.data}</span> : '-'}
           </div>
         ))}
       </div>

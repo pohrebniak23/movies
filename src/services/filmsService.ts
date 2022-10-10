@@ -1,12 +1,12 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { IActor } from "../types/IActor";
-import { IMovieInfo } from "../types/IMovieInfo";
-import { IMoviesData } from "../types/IMoviesData";
-import { IQueryContentByCategory, IQueryLatestContent } from "../types/IQuery";
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { IActor } from '../types/IActor';
+import { IMovieInfo } from '../types/IMovieInfo';
+import { IMoviesData } from '../types/IMoviesData';
+import { IQueryContentByCategory, IQueryLatestContent } from '../types/IQuery';
 
 export const filmsApi = createApi({
-  reducerPath: "filmsApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://api.kinopoisk.dev" }),
+  reducerPath: 'filmsApi',
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://api.kinopoisk.dev' }),
   endpoints: (builder) => ({
     getLatestContent: builder.query<IMoviesData, IQueryLatestContent>({
       query: ({ category, limit }) => ({

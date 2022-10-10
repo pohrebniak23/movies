@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { filmsApi } from "../../../services/filmsService";
-import { Button } from "../../UI/Button/Button";
-import styles from "./Banner.module.sass";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { filmsApi } from '../../../services/filmsService';
+import { Button } from '../../UI/Button/Button';
+import styles from './Banner.module.scss';
 
 type Props = {
   trailerLink: string;

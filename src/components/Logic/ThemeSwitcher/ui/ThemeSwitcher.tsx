@@ -1,10 +1,9 @@
-import classNames from "classnames";
-import { Themes } from "../../../Providers/ThemeProvider/ThemeContext";
-import { Button } from "../../../UI/Button/Button";
-import { ReactComponent as DarkIcon } from "../assets/icons/dark-switch-icon.svg";
-import { ReactComponent as LightIcon } from "../assets/icons/light-switch-icon.svg";
-import styles from "./ThemeSwitcher.module.sass";
-import { useTheme } from "../../../../hooks/useTheme";
+import classNames from 'classnames';
+import { Themes } from '../../../Providers/ThemeProvider/ThemeContext';
+import { ReactComponent as DarkIcon } from '../assets/icons/dark-switch-icon.svg';
+import { ReactComponent as LightIcon } from '../assets/icons/light-switch-icon.svg';
+import styles from './ThemeSwitcher.module.scss';
+import { useTheme } from '../../../../hooks/useTheme';
 
 interface ThemeSwitcherProps {
   className?: string;
@@ -18,7 +17,7 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
       className={classNames(
         styles.themeSwitcher,
         { [styles.themeSwitcher_dark]: theme === Themes.DARK },
-        className
+        className,
       )}
     >
       <button

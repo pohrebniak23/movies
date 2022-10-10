@@ -1,0 +1,82 @@
+.button {
+  background: var(bg-color);
+  color: var(primary-color);
+  border: 2px solid var(bg-color);
+  font-size: 16px;
+  line-height: 24px;
+  padding: 12px 32px;
+  border-radius: 10px;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 50px;
+
+  span {
+    font-size: 16px;
+  }
+
+  svg {
+    height: 22px;
+    width: auto;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    padding: 8px 20px;
+    height: 40px;
+
+    span {
+      font-size: 14px;
+
+      svg {
+        height: 18px;
+      }
+    }
+  }
+}
+
+.outline {
+  background: none;
+  border: 2px solid var(bg-color);
+  color: var(bg-color);
+}
+
+.saved {
+  background: var(primary-color);
+  border: 2px solid var(primary-color);
+  color: var(color-black);
+}
+
+.notSaved {
+  background: none;
+  border: 2px solid var(primary-color);
+  color: var(primary-color);
+}
+
+.savedBlack {
+  background: var(bg-color);
+  border: 2px solid var(bg-color);
+  color: var(primary-color);
+}
+
+.notSavedBlack {
+  background: none;
+  border: 2px solid var(bg-color);
+  color: var(bg-color);
+}
+
+.white {
+  background: var(primary-color);
+  border: 2px solid var(primary-color);
+  color: var(bg-color);
+}
+
+.leftM {
+  margin-left: 10px;
+}
+
+.rightM {
+  margin-right: 10px;
+}

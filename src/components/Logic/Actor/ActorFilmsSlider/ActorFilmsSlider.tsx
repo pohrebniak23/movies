@@ -1,7 +1,7 @@
-import React from "react";
-import { IActorMovies } from "../../../../types/IActor";
-import { DefaultSlider } from "../../DefaultSlider/DefaultSlider";
-import { FilmSliderCard } from "../FilmSliderCard/FilmSliderCard";
+import React from 'react';
+import { IActorMovies } from '../../../../types/IActor';
+import { DefaultSlider } from '../../DefaultSlider/DefaultSlider';
+import { FilmSliderCard } from '../FilmSliderCard/FilmSliderCard';
 
 type Props = {
   films: IActorMovies[];

@@ -1,0 +1,82 @@
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 50px;
+  color: var(primary-color);
+  margin-bottom: 32px;
+  margin-top: 16px;
+}
+
+.description {
+  font-size: 18px;
+  color: var(primary-color);
+  line-height: 26px;
+}
+
+.subtitle {
+  font-size: 28px;
+  color: var(primary-color);
+  margin-top: 32px;
+}
+
+.gridInfo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.nav {
+  display: flex;
+  gap: 0 20px;
+}
+
+.gridItem {
+  display: flex;
+  color: var(primary-color);
+
+  p {
+    font-size: 16px;
+    min-width: 200px;
+  }
+
+  span {
+    width: 100%;
+  }
+}
+
+.actorsList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 24px;
+    margin-bottom: 24px;
+    margin-top: 0;
+  }
+
+  .gridInfo {
+    gap: 12px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+    margin-top: 24px;
+  }
+
+  .gridItem {
+    p {
+      min-width: 50%;
+      font-size: 14px;
+    }
+
+    span {
+      font-size: 14px;
+    }
+  }
+}
