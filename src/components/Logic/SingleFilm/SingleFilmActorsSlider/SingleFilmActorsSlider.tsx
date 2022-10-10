@@ -7,7 +7,7 @@ type Props = {
   actors: IPerson[] | undefined;
 };
 
-export const FilmActorsSlider: React.FC<Props> = ({ actors }) => {
+export const SingleFilmActorsSlider: React.FC<Props> = ({ actors }) => {
   return (
     <DefaultSlider>
       {actors?.map((actor) => (

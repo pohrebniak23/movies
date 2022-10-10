@@ -3,9 +3,9 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { App } from './App';
 import { setupStore } from './store/store';
-import './assets/sass/main.scss';
 import { ThemeProvider } from './components/Providers/ThemeProvider/ThemeProvider';
 import ErrorBoundary from './components/Providers/ErrorBoundary/ErrorBoundary';
+import './assets/scss/main.scss';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,

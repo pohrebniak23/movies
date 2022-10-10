@@ -1,7 +1,7 @@
 .categoryItem {
   width: 100%;
   padding: 20px;
-  background: var(primary-color);
+  background: var(--primary-color);
   border-radius: 16px;
   display: flex;
   justify-content: space-between;
@@ -33,13 +33,13 @@
 
 .title {
   margin-bottom: 16px;
-  color: var(bg-color);
+  color: var(--bg-color);
   margin-top: 0;
 }
 
 .properties {
   margin-bottom: 16px;
-  color: var(bg-color);
+  color: var(--bg-color);
 }
 
 .description {

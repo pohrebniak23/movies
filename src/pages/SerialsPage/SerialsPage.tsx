@@ -1,14 +1,14 @@
 import React from 'react';
 import { CategoryList } from '../../components/Logic/CategoryList/CategoryList';
 import { Filters } from '../../components/Logic/Filters/Filters';
-import './Films.scss';
+import './SerialsPage.scss';
 
-export const Films: React.FC = () => {
+export const SerialsPage: React.FC = () => {
   return (
-    <div className="films">
-      <div className="container films__block">
+    <div className="serials">
+      <div className="container serials__block">
         <Filters />
-        <CategoryList category="movie" />
+        <CategoryList category="tv-series" />
       </div>
     </div>
   );

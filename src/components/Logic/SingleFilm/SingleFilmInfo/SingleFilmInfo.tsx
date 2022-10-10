@@ -7,13 +7,13 @@ import { dateConverter } from '../../../../helpers/dateConverter';
 import { typeConverter } from '../../../../helpers/typeConverter';
 import { IMovieInfo } from '../../../../types/IMovieInfo';
 import { Button } from '../../../UI/Button/Button';
-import styles from './FilmInfo.module.scss';
+import styles from './SingleFilmInfo.module.scss';
 
 type Props = {
   info: IMovieInfo;
 };
 
-export const FilmInfo: React.FC<Props> = ({ info }) => {
+export const SingleFilmInfo: React.FC<Props> = ({ info }) => {
   const [isSaved, setIsSaved] = useState(false);
 
   const saveToFavourite = () => {

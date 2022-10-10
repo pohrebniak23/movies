@@ -5,20 +5,20 @@
 
 .title {
   font-size: 50px;
-  color: var(primary-color);
+  color: var(--primary-color);
   margin-bottom: 32px;
   margin-top: 16px;
 }
 
 .description {
   font-size: 18px;
-  color: var(primary-color);
+  color: var(--primary-color);
   line-height: 26px;
 }
 
 .subtitle {
   font-size: 28px;
-  color: var(primary-color);
+  color: var(--primary-color);
   margin-top: 32px;
 }
 
@@ -36,7 +36,7 @@
 
 .gridItem {
   display: flex;
-  color: var(primary-color);
+  color: var(--primary-color);
 
   p {
     font-size: 16px;

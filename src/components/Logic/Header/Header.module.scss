@@ -2,7 +2,7 @@
   padding: 24px 0;
   position: relative;
   z-index: 2;
-  background: var(header-bg);
+  background: var(--header-bg);
 }
 
 .block {
@@ -19,7 +19,7 @@
 
   svg {
     path {
-      fill: var(primary-color);
+      fill: var(--primary-color);
     }
   }
 
@@ -29,15 +29,15 @@
 }
 
 .humburger {
-  color: var(primary-color);
+  color: var(--primary-color);
   cursor: pointer;
   width: 26px;
   height: auto;
 
   svg {
     path {
-      fill: var(primary-color);
-      stroke: var(primary-color);
+      fill: var(--primary-color);
+      stroke: var(--primary-color);
     }
   }
 }
@@ -62,7 +62,7 @@
     width: 24px;
     height: 24px;
     display: block;
-    color: var(primary-color);
+    color: var(--primary-color);
   }
 
   .humburger {

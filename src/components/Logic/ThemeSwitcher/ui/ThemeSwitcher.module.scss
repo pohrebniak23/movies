@@ -1,6 +1,6 @@
 .themeSwitcher {
   background: unset;
-  border: 1px solid var(nav-bg-color);
+  border: 1px solid var(--nav-bg-color);
   width: 50px;
   border-radius: 50px;
   height: 26px;
@@ -12,7 +12,7 @@
   padding: 0;
   width: 22px;
   height: 22px;
-  background: var(nav-bg-color);
+  background: var(--nav-bg-color);
   border: none;
   display: flex;
   align-items: center;
@@ -27,7 +27,7 @@
 
   svg {
     path {
-      fill: var(nav-primary-color);
+      fill: var(--nav-primary-color);
     }
   }
 
@@ -36,11 +36,11 @@
     transform: translate(calc(-100% - 2px), -50%);
     margin-left: auto;
     transition: 0.4s;
-    background-color: var(nav-bg-color);
+    background-color: var(--nav-bg-color);
 
     svg {
       path {
-        fill: var(nav-primary-color);
+        fill: var(--nav-primary-color);
       }
     }
   }

@@ -3,7 +3,7 @@ import styles from './ErrorBoundaryPage.module.scss';
 
 export const ErrorBoundaryPage = () => {
   return (
-    <div className={styles.eroroBoundary}>
+    <div className={styles.errorBoundary}>
       <h1 className={styles.title}>Sorry, something went wrong</h1>
       <Button
         classname={styles.button}

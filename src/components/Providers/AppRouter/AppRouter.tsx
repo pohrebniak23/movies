@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Films } from '../../../pages/Films/Films';
-import { Home } from '../../../pages/Home/Home';
+import { FilmsPage } from '../../../pages/FilmsPage/FilmsPage';
+import { HomePage } from '../../../pages/HomePage/HomePage';
 import { NotFound } from '../../../pages/NotFound/NotFound';
-import { Watch } from '../../../pages/Watch/Watch';
-import { Serials } from '../../../pages/Serials/Serials';
+import { WatchFilmPage } from '../../../pages/WatchFilmPage/WatchFilmPage';
+import { SerialsPage } from '../../../pages/SerialsPage/SerialsPage';
 import { CartoonsPage } from '../../../pages/CartoonsPage/CartoonsPage';
-import { Film } from '../../Logic/Film/Film';
-import { Actor } from '../../Logic/Actor/Actor';
+import { SingleFilmPage } from '../../../pages/SingleFilmPage/SingleFilmPage';
+import { ActorPage } from '../../../pages/ActorPage/ActorPage';
 
 export enum RouteNames {
   HOME = '/',
@@ -27,15 +27,15 @@ export enum RouteNames {
 export const AppRouter: React.FC = () => {
   return (
     <Routes>
-      <Route path={RouteNames.HOME} element={<Home />} />
-      <Route path={RouteNames.FILMS} element={<Films />} />
-      <Route path={RouteNames.FILMS_ITEM} element={<Film />} />
-      <Route path={RouteNames.SERIALS} element={<Serials />} />
-      <Route path={RouteNames.SERIALS_ITEM} element={<Film />} />
+      <Route path={RouteNames.HOME} element={<HomePage />} />
+      <Route path={RouteNames.FILMS} element={<FilmsPage />} />
+      <Route path={RouteNames.FILMS_ITEM} element={<SingleFilmPage />} />
+      <Route path={RouteNames.SERIALS} element={<SerialsPage />} />
+      <Route path={RouteNames.SERIALS_ITEM} element={<SingleFilmPage />} />
       <Route path={RouteNames.CARTOONS} element={<CartoonsPage />} />
-      <Route path={RouteNames.SERIALS_ITEM} element={<Film />} />
-      <Route path={RouteNames.WATCH} element={<Watch />} />
-      <Route path={RouteNames.ACTOR} element={<Actor />} />
+      <Route path={RouteNames.SERIALS_ITEM} element={<SingleFilmPage />} />
+      <Route path={RouteNames.WATCH} element={<WatchFilmPage />} />
+      <Route path={RouteNames.ACTOR} element={<ActorPage />} />
 
       {/* <Route
         path={RouteNames.ACCOUNT}

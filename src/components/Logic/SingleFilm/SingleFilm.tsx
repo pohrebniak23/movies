@@ -2,13 +2,13 @@ import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { BackBtn } from '../../UI/BackBtn/BackBtn';
 import { Loader } from '../../Simple/Loader/Loader';
-import { FilmInfo } from './FilmInfo/FilmInfo';
+import { SingleFilmInfo } from './SingleFilmInfo/SingleFilmInfo';
 import { Tabs } from '../../UI/Tabs/Tabs';
 import { filmsApi } from '../../../services/filmsService';
-import styles from './Film.module.scss';
-import { FilmActorsSlider } from './FilmActorsSlider/FilmSlider';
+import { SingleFilmActorsSlider } from './SingleFilmActorsSlider/SingleFilmActorsSlider';
+import styles from './SingleFilm.module.scss';
 
-export const Film: React.FC = () => {
+export const SingleFilm: React.FC = () => {
   const { id } = useParams();
   const { data: filmData } = filmsApi.useGetFilmByIdQuery(id);
 
@@ -22,7 +22,7 @@ export const Film: React.FC = () => {
       },
       {
         label: 'Актеры',
-        component: <FilmActorsSlider actors={filmData?.persons} />,
+        component: <SingleFilmActorsSlider actors={filmData?.persons} />,
       },
     ],
     [filmData],
@@ -35,7 +35,7 @@ export const Film: React.FC = () => {
           <BackBtn />
           <div className={styles.content}>
             <img src={filmData.poster.url} alt="" className={styles.poster} />
-            <FilmInfo info={filmData} />
+            <SingleFilmInfo info={filmData} />
           </div>
 
           <Tabs tabsList={tabs} />

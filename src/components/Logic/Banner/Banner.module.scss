@@ -40,15 +40,15 @@
   font-size: 18px;
   max-width: 600px;
   margin-bottom: 24px;
-
-  @media (max-width: 480px) {
-    font-size: 14px;
-    line-height: 20px;
-  }
-
+  display: -webkit-box;
   overflow: hidden;
   -webkit-line-clamp: 3;
   line-clamp: 3;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
