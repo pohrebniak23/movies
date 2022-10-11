@@ -1,6 +1,6 @@
 name: Deploy to prod
 
-on: 
+on:
   push:
     branches:
       - master
@@ -13,12 +13,12 @@ jobs:
       matrix:
         node-version: [ 17.x ]
 
-    steps: 
-     - uses: actions/checkout@v2
-    - name: Starting Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
       - name: install firebase tools
         run: npm install firebase-tools -g
@@ -30,6 +30,6 @@ jobs:
         run: npm run build
 
       - name: Run deploy
-        env: 
+        env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: firebase deploy --only hosting:${{ secrets.FIREBASE_HOSTING_ID }} -P ${{ secrets.FIREBASE_PROJECT_ID }}
