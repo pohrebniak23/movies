@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { filmsApi } from "../../../services/filmsService";
-import { Button } from "../../UI/Button/Button";
-import { Loader } from "../../Simple/Loader/Loader";
-import { ListItems, MListItems } from "../ListItems/ListItems";
-import styles from "./LatestContent.module.sass";
+import React, { useState } from 'react';
+import { filmsApi } from '../../../services/filmsService';
+import { Button } from '../../UI/Button/Button';
+import { Loader } from '../../Simple/Loader/Loader';
+import { ListItems, MListItems } from '../ListItems/ListItems';
+import styles from './LatestContent.module.scss';
 
 type Props = {
   category: string;
@@ -35,9 +35,7 @@ export const LatestContent: React.FC<Props> = ({ category, title }) => {
             <h2 className={styles.title}>{title}</h2>
             <Grid cardsList={movies.docs} />
 
-            {isLoading || isFetching && (
-              <Loader height="200px" />
-            )}
+            {isLoading || (isFetching && <Loader height="200px" />)}
             {movies.total > limit && (
               <Button
                 variant="white"

@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { FcLike } from "react-icons/fc";
-import { BsCheck } from "react-icons/bs";
-import { IMovie } from "../../../types/IMovie";
-import { Button } from "../../UI/Button/Button";
-import { Rating } from "../Rating/Rating";
-import styles from "./CategoryItem.module.sass";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { FcLike } from 'react-icons/fc';
+import { BsCheck } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
+import { IMovie } from '../../../types/IMovie';
+import { Button } from '../../UI/Button/Button';
+import { Rating } from '../Rating/Rating';
+import styles from './CategoryItem.module.scss';
 
 type Props = {
   info: IMovie;
@@ -40,11 +40,11 @@ export const CategoryItem: React.FC<Props> = React.memo(({ info }) => {
           {info.rating.imdb > 0 && <Rating rating={info.rating.imdb} />}
         </div>
         <Button
-          variant={isSaved ? "savedBlack" : "notSavedBlack"}
+          variant={isSaved ? 'savedBlack' : 'notSavedBlack'}
           iconLeft={isSaved ? <BsCheck /> : <FcLike />}
           onClick={saveToFavourite}
         >
-          {isSaved ? "Сохранено" : "Сохранить"}
+          {isSaved ? 'Сохранено' : 'Сохранить'}
         </Button>
       </div>
     </div>

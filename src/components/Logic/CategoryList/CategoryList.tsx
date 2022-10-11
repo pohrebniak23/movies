@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { useAppSelector } from "../../../hooks/redux";
-import { filmsApi } from "../../../services/filmsService";
-import { IMovie } from "../../../types/IMovie";
-import { Loader } from "../../Simple/Loader/Loader";
-import { CategoryItem } from "../CategoryItem/CategoryItem";
-import styles from "./CategoryList.module.sass";
+import React, { useState } from 'react';
+import { useAppSelector } from '../../../hooks/redux';
+import { filmsApi } from '../../../services/filmsService';
+import { IMovie } from '../../../types/IMovie';
+import { Loader } from '../../Simple/Loader/Loader';
+import { CategoryItem } from '../CategoryItem/CategoryItem';
+import styles from './CategoryList.module.scss';
 
 type Props = {
   category: string;

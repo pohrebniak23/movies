@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useRef } from 'react';
 
 export const useOnOutsideClick = (handleOutsideClick: any) => {
   const innerBorderRef = useRef<HTMLDivElement | null>(null);
@@ -13,9 +14,9 @@ export const useOnOutsideClick = (handleOutsideClick: any) => {
   };
 
   useEffect(() => {
-    document.addEventListener("click", handleClick, true);
+    document.addEventListener('click', handleClick, true);
     return () => {
-      document.removeEventListener("click", handleClick, true);
+      document.removeEventListener('click', handleClick, true);
     };
   }, []);
 

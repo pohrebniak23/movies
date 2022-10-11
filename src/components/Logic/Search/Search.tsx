@@ -1,14 +1,13 @@
-import React, { useState } from "react";
-import { BiSearchAlt } from "react-icons/bi";
-import { IoMdClose } from "react-icons/io";
-import { useDebounce } from "../../../hooks/useDebounce";
-import { filmsApi } from "../../../services/filmsService";
-import { IMovie } from "../../../types/IMovie";
-import { SearchItem } from "./SearchItem";
-import { Loader } from "../../Simple/Loader/Loader";
-import { useOnOutsideClick } from "../../../hooks/useOnOutsideClick";
-import styles from "./Search.module.sass";
-import classNames from "classnames";
+import React, { useState } from 'react';
+import { BiSearchAlt } from 'react-icons/bi';
+import { IoMdClose } from 'react-icons/io';
+import classNames from 'classnames';
+import { useDebounce } from '../../../hooks/useDebounce';
+import { filmsApi } from '../../../services/filmsService';
+import { Loader } from '../../Simple/Loader/Loader';
+import { useOnOutsideClick } from '../../../hooks/useOnOutsideClick';
+import styles from './Search.module.scss';
+import { SearchContent } from './SearchContent/SearchContent';
 
 type Props = {
   isSearchOpen: boolean;
@@ -16,7 +15,7 @@ type Props = {
 };
 
 export const Search: React.FC<Props> = ({ isSearchOpen, setIsSearchOpen }) => {
-  const [search, setSearch] = useState<string>("");
+  const [search, setSearch] = useState<string>('');
   const { debouncedValue } = useDebounce(search, 300);
   const [isActive, setIsActive] = useState(false);
 
@@ -24,14 +23,16 @@ export const Search: React.FC<Props> = ({ isSearchOpen, setIsSearchOpen }) => {
     data: list,
     isFetching,
     isLoading,
-  } = filmsApi.useGetFilmByNameQuery(debouncedValue, { skip: debouncedValue.length === 0 });
+  } = filmsApi.useGetFilmByNameQuery(debouncedValue, {
+    skip: debouncedValue.length === 0,
+  });
 
   const searchHandle = (value: string) => {
     setSearch(value);
   };
 
   const { innerBorderRef } = useOnOutsideClick(() => {
-    setIsActive(false)
+    setIsActive(false);
   });
 
   const closeSearch = () => {
@@ -43,7 +44,7 @@ export const Search: React.FC<Props> = ({ isSearchOpen, setIsSearchOpen }) => {
       ref={innerBorderRef}
       className={classNames(
         styles.wrapper,
-        isSearchOpen && styles.wrapperActive
+        isSearchOpen && styles.wrapperActive,
       )}
     >
       <input
@@ -68,14 +69,11 @@ export const Search: React.FC<Props> = ({ isSearchOpen, setIsSearchOpen }) => {
           {isFetching || isLoading ? (
             <Loader height="100px" />
           ) : (
-            list?.docs?.map((item: IMovie) => (
-              <SearchItem
-                key={item.id}
-                data={item}
-                setIsActive={setIsActive}
-                setIsSearchOpen={setIsSearchOpen}
-              />
-            ))
+            <SearchContent
+              list={list}
+              setIsActive={setIsActive}
+              setIsSearchOpen={setIsSearchOpen}
+            />
           )}
         </div>
       )}

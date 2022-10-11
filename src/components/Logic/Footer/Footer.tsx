@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { RouteNames } from "../../Providers/AppRouter/AppRouter";
-import { ReactComponent as Logo } from "../../../assets/logo.svg";
-import styles from "./Footer.module.sass";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { RouteNames } from '../../Providers/AppRouter/AppRouter';
+import { ReactComponent as Logo } from '../../../assets/logo.svg';
+import styles from './Footer.module.scss';
 
 type TLink = {
   link: string;
@@ -12,11 +12,11 @@ type TLink = {
 export const Footer: React.FC = () => {
   const links = React.useMemo(
     () => [
-      { link: RouteNames.FILMS, title: "Фильмы" },
-      { link: RouteNames.SERIALS, title: "Сериалы" },
-      { link: RouteNames.CARTOONS, title: "Мультфильмы" },
+      { link: RouteNames.FILMS, title: 'Фильмы' },
+      { link: RouteNames.SERIALS, title: 'Сериалы' },
+      { link: RouteNames.CARTOONS, title: 'Мультфильмы' },
     ],
-    []
+    [],
   );
 
   return (

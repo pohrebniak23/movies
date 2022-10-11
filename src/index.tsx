@@ -1,26 +1,26 @@
-import ReactDOM from "react-dom/client";
-import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
-import { App } from "./App";
-import { setupStore } from "./store/store";
-import "./assets/sass/main.sass";
-import { ThemeProvider } from "./components/Providers/ThemeProvider/ThemeProvider";
-import { StrictMode } from "react";
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import { App } from './App';
+import { setupStore } from './store/store';
+import { ThemeProvider } from './components/Providers/ThemeProvider/ThemeProvider';
+import ErrorBoundary from './components/Providers/ErrorBoundary/ErrorBoundary';
+import './assets/scss/main.scss';
 
 const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+  document.getElementById('root') as HTMLElement,
 );
 
 const store = setupStore();
 
 root.render(
-  <StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
+  <BrowserRouter>
+    <Provider store={store}>
+      <ErrorBoundary>
         <ThemeProvider>
           <App />
         </ThemeProvider>
-      </Provider>
-    </BrowserRouter>
-  </StrictMode>
+      </ErrorBoundary>
+    </Provider>
+  </BrowserRouter>,
 );

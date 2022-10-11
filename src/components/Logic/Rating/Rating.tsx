@@ -1,6 +1,6 @@
-import React from "react";
-import { AiOutlineStar } from "react-icons/ai";
-import styles from "./Rating.module.sass";
+import React from 'react';
+import { AiOutlineStar } from 'react-icons/ai';
+import styles from './Rating.module.scss';
 
 type Props = {
   rating: number;

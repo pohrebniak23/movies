@@ -1,0 +1,9 @@
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.notFound {
+  color: var(--bg-color);
+}
