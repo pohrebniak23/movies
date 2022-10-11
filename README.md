@@ -6,6 +6,7 @@
   * React
   * TypeScript
   * Redux Toolkit, RTK Query
-  * Sass, CSS modules
+  * SCSS, CSS modules
   * Firebase
   * Rest API
+  * CI/CD
