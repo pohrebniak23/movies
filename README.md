@@ -1,12 +1,13 @@
-# Movies
+# Movies app
+
   Front-end app for searching and watching movies (Rest API kinopoisk.dev)  
-  Demo: [https://movies-a56b9.web.app/](https://movies-a56b9.web.app/)
+
+  🚀 App demo link - https://my-movies23.onrender.com
   
  # Technology stack:
   * React
   * TypeScript
   * Redux Toolkit, RTK Query
   * SCSS, CSS modules
-  * Firebase
   * Rest API
   * CI/CD
