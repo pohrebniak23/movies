@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react';
 import Select, { SingleValueProps } from 'react-select';
-import { Genres } from '../../../types/IFilter';
+import { Genres } from '../../../shared/types/IFilter';
 
 type Props = {
   selectedOption: Genres;

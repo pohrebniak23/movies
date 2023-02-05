@@ -5,14 +5,25 @@
   width: 100%;
   height: max-content;
   position: sticky;
-  top: 0;
+  top: 70px;
+  display: none;
+}
+
+.blockOpen {
+  display: block;
+}
+
+.toggleBtn {
+  margin-bottom: 8px;
+  width: 100%;
+  position: sticky;
+  top: 10px;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-top: 16px;
 }
 
 .contentOpen {
@@ -47,6 +58,7 @@
   font-weight: 400;
   margin-bottom: 8px;
   font-size: 14px;
+  color: rgb(var(--card-text-color));
 }
 
 .openBtn {
@@ -84,6 +96,7 @@
   .title {
     text-align: center;
     font-size: 20px;
+    color: rgb(var(--card-text-color));
   }
 
   .content {

@@ -1,7 +1,7 @@
 import React from 'react';
-import { AppRouter } from './components/Providers/AppRouter/AppRouter';
-import { Header } from './components/Logic/Header/Header';
-import { Footer } from './components/Logic/Footer/Footer';
+import { AppRouter } from './providers/AppRouter/AppRouter';
+import { Header } from '../components/Logic/Header/Header';
+import { Footer } from '../components/Logic/Footer/Footer';
 
 export const App: React.FC = () => {
   return (

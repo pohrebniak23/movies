@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { filmsApi } from '../services/filmsService';
+import { filmsApi } from '../../services/filmsService';
 import filtersSlice from './reducers/filtersSlice';
 
 const rootReducer = combineReducers({

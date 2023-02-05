@@ -3,7 +3,7 @@ import {
   LOCAL_STORAGE_THEME_KEY,
   ThemeContext,
   Themes,
-} from '../components/Providers/ThemeProvider/ThemeContext';
+} from '../../app/providers/ThemeProvider/ThemeContext';
 
 interface IUseTheme {
   theme: Themes;

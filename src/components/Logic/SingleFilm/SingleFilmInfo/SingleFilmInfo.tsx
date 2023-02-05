@@ -3,9 +3,9 @@ import { AiOutlinePlayCircle } from 'react-icons/ai';
 import { FcLike } from 'react-icons/fc';
 import { BsCheck } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-import { dateConverter } from '../../../../helpers/dateConverter';
-import { typeConverter } from '../../../../helpers/typeConverter';
-import { IMovieInfo } from '../../../../types/IMovieInfo';
+import { dateConverter } from '../../../../shared/helpers/dateConverter';
+import { typeConverter } from '../../../../shared/helpers/typeConverter';
+import { IMovieInfo } from '../../../../shared/types/IMovieInfo';
 import { Button } from '../../../UI/Button/Button';
 import styles from './SingleFilmInfo.module.scss';
 

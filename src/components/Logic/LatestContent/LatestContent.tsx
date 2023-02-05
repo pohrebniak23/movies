@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { filmsApi } from '../../../services/filmsService';
 import { Button } from '../../UI/Button/Button';
 import { Loader } from '../../Simple/Loader/Loader';
-import { ListItems, MListItems } from '../ListItems/ListItems';
 import styles from './LatestContent.module.scss';
+import { MListItems } from '../ListItems/ListItems';
 
 type Props = {
   category: string;
@@ -21,7 +21,7 @@ export const LatestContent: React.FC<Props> = ({ category, title }) => {
     limit,
   });
 
-  const { Container, Grid } = MListItems;
+  const { Container, Grid, ListItems } = MListItems;
 
   const loadMoreContent = () => {
     setLimit(limit + 4);
@@ -29,13 +29,14 @@ export const LatestContent: React.FC<Props> = ({ category, title }) => {
 
   return (
     <div className={styles.content}>
-      {movies && (
+      {movies?.docs && (
         <ListItems>
           <Container>
             <h2 className={styles.title}>{title}</h2>
             <Grid cardsList={movies.docs} />
 
             {isLoading || (isFetching && <Loader height="200px" />)}
+
             {movies.total > limit && (
               <Button
                 variant="white"

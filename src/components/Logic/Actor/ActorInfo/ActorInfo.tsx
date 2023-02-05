@@ -1,7 +1,7 @@
 import React, { Fragment, useMemo } from 'react';
-import { IActor } from '../../../../types/IActor';
+import { IActor } from '../../../../shared/types/IActor';
 import styles from './ActorInfo.module.scss';
-import { dateConverter } from '../../../../helpers/dateConverter';
+import { dateConverter } from '../../../../shared/helpers/dateConverter';
 
 type Props = {
   info: IActor;

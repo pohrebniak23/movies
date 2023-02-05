@@ -1,18 +1,18 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { MdFilterList, MdArrowBackIosNew } from 'react-icons/md';
 import classNames from 'classnames';
-import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
+import React, { useEffect, useMemo, useState } from 'react';
+import { MdFilterList } from 'react-icons/md';
 import {
   reset,
   setGenre,
   setRating,
   setYear,
-} from '../../../store/reducers/filtersSlice';
-import { Button } from '../../UI/Button/Button';
+} from '../../../app/store/reducers/filtersSlice';
+import { useAppDispatch, useAppSelector } from '../../../shared/hooks/redux';
+import { FilterItem, Genres } from '../../../shared/types/IFilter';
 import { Range } from '../../Simple/Range/Range';
-import styles from './Filters.module.scss';
+import { Button } from '../../UI/Button/Button';
 import { CustomSelect } from '../../UI/CustomSelect/CustomSelect';
-import { FilterItem, Genres } from '../../../types/IFilter';
+import styles from './Filters.module.scss';
 
 export const Filters: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -116,31 +116,26 @@ export const Filters: React.FC = () => {
     <div className={styles.filters}>
       <Button
         variant="white"
-        classname={styles.openBtn}
+        classname={styles.toggleBtn}
         iconLeft={<MdFilterList />}
         onClick={handleFilterOpen}
       >
         Фильтры
       </Button>
+
       <div className={classNames(styles.block, filterOpen && styles.blockOpen)}>
-        <div className={styles.nav}>
-          <Button
-            variant="black"
-            classname={styles.closeBtn}
-            iconLeft={<MdArrowBackIosNew />}
-            onClick={handleFilterOpen}
-          />
-          <h2 className={styles.title}>Фильтры</h2>
-        </div>
         <div className={styles.content}>
           {filtersList?.map((item: FilterItem) => (
             <div key={item.name} className={styles.item}>
               <h3 className={styles.name}>{item.name}</h3>
+
               {item.component}
             </div>
           ))}
+
           <div className={styles.buttons}>
             <Button onClick={handleSumbit}>Применить</Button>
+
             <Button variant="outline" onClick={handleClear}>
               Сбросить
             </Button>

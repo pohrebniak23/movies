@@ -1,9 +1,9 @@
 import classNames from 'classnames';
-import { Themes } from '../../../Providers/ThemeProvider/ThemeContext';
+import { Themes } from '../../../../app/providers/ThemeProvider/ThemeContext';
 import { ReactComponent as DarkIcon } from '../assets/icons/dark-switch-icon.svg';
 import { ReactComponent as LightIcon } from '../assets/icons/light-switch-icon.svg';
 import styles from './ThemeSwitcher.module.scss';
-import { useTheme } from '../../../../hooks/useTheme';
+import { useTheme } from '../../../../shared/hooks/useTheme';
 
 interface ThemeSwitcherProps {
   className?: string;

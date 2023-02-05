@@ -1,16 +1,16 @@
 import React, { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FiMenu } from 'react-icons/fi';
-import { ImFilm } from 'react-icons/im';
-import { MdOutlineLocalMovies, MdChildCare } from 'react-icons/md';
-import { GrClose } from 'react-icons/gr';
 import { BiSearchAlt } from 'react-icons/bi';
-import { Search } from '../Search/Search';
-import { RouteNames } from '../../Providers/AppRouter/AppRouter';
+import { FiMenu } from 'react-icons/fi';
+import { GrClose } from 'react-icons/gr';
+import { ImFilm } from 'react-icons/im';
+import { MdChildCare, MdOutlineLocalMovies } from 'react-icons/md';
+import { Link } from 'react-router-dom';
+import { ReactComponent as Logo } from 'shared/assets/logo.svg';
+import { RouteNames } from '../../../app/providers/AppRouter/AppRouter';
 import { DropDown } from '../../Simple/DropDown/DropDown';
-import { ReactComponent as Logo } from '../../../assets/logo.svg';
-import styles from './Header.module.scss';
+import { Search } from '../Search/Search';
 import { ThemeSwitcher } from '../ThemeSwitcher';
+import styles from './Header.module.scss';
 
 export const Header: React.FC = () => {
   const [isDropOpen, setIsDropOpen] = useState<boolean>(false);

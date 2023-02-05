@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { RouteNames } from '../../Providers/AppRouter/AppRouter';
-import { ReactComponent as Logo } from '../../../assets/logo.svg';
+import { ReactComponent as Logo } from 'shared/assets/logo.svg';
+import { RouteNames } from '../../../app/providers/AppRouter/AppRouter';
 import styles from './Footer.module.scss';
 
 type TLink = {

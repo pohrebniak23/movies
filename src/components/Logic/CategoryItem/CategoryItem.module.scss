@@ -48,6 +48,7 @@
   line-clamp: 2;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
+  color: rgb(var(--card-text-color));
 }
 
 .rating {

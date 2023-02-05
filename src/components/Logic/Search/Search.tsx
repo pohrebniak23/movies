@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { BiSearchAlt } from 'react-icons/bi';
 import { IoMdClose } from 'react-icons/io';
 import classNames from 'classnames';
-import { useDebounce } from '../../../hooks/useDebounce';
+import { useDebounce } from '../../../shared/hooks/useDebounce';
 import { filmsApi } from '../../../services/filmsService';
 import { Loader } from '../../Simple/Loader/Loader';
-import { useOnOutsideClick } from '../../../hooks/useOnOutsideClick';
+import { useOnOutsideClick } from '../../../shared/hooks/useOnOutsideClick';
 import styles from './Search.module.scss';
 import { SearchContent } from './SearchContent/SearchContent';
 

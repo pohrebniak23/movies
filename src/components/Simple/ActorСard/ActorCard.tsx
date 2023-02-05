@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { IPerson } from '../../../types/IMovieInfo';
+import { IPerson } from '../../../shared/types/IMovieInfo';
 import styles from './ActorCard.module.scss';
 
 type Props = {

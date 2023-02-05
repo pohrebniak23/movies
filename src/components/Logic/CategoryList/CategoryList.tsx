@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useAppSelector } from '../../../hooks/redux';
+import { useAppSelector } from '../../../shared/hooks/redux';
 import { filmsApi } from '../../../services/filmsService';
-import { IMovie } from '../../../types/IMovie';
+import { IMovie } from '../../../shared/types/IMovie';
 import { Loader } from '../../Simple/Loader/Loader';
 import { CategoryItem } from '../CategoryItem/CategoryItem';
 import styles from './CategoryList.module.scss';

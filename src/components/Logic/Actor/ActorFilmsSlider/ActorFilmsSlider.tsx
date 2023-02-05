@@ -1,5 +1,5 @@
 import React from 'react';
-import { IActorMovies } from '../../../../types/IActor';
+import { IActorMovies } from '../../../../shared/types/IActor';
 import { DefaultSlider } from '../../DefaultSlider/DefaultSlider';
 import { FilmSliderCard } from '../FilmSliderCard/FilmSliderCard';
 

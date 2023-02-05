@@ -1,5 +1,5 @@
 import React from 'react';
-import { IPerson } from '../../../../types/IMovieInfo';
+import { IPerson } from '../../../../shared/types/IMovieInfo';
 import { ActorCard } from '../../../Simple/ActorСard/ActorCard';
 import { DefaultSlider } from '../../DefaultSlider/DefaultSlider';
 

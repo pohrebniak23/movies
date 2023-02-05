@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useOnOutsideClick } from '../../../hooks/useOnOutsideClick';
-import { IDropDown } from '../../../types/IDropDown';
+import { useOnOutsideClick } from '../../../shared/hooks/useOnOutsideClick';
+import { IDropDown } from '../../../shared/types/IDropDown';
 import styles from './DropDown.module.scss';
 
 type Props = {

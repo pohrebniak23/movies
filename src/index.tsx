@@ -1,11 +1,11 @@
+import { App } from 'app/App';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import { App } from './App';
-import { setupStore } from './store/store';
-import { ThemeProvider } from './components/Providers/ThemeProvider/ThemeProvider';
-import ErrorBoundary from './components/Providers/ErrorBoundary/ErrorBoundary';
-import './assets/scss/main.scss';
+import 'shared/assets/scss/main.scss';
+import ErrorBoundary from './app/providers/ErrorBoundary/ErrorBoundary';
+import { ThemeProvider } from './app/providers/ThemeProvider/ThemeProvider';
+import { setupStore } from './app/store/store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,

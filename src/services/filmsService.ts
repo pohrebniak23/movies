@@ -1,8 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { IActor } from '../types/IActor';
-import { IMovieInfo } from '../types/IMovieInfo';
-import { IMoviesData } from '../types/IMoviesData';
-import { IQueryContentByCategory, IQueryLatestContent } from '../types/IQuery';
+import {
+  IQueryContentByCategory,
+  IQueryLatestContent,
+} from 'shared/types/IQuery';
+import { IActor } from '../shared/types/IActor';
+import { IMovieInfo } from '../shared/types/IMovieInfo';
+import { IMoviesData } from '../shared/types/IMoviesData';
 
 export const filmsApi = createApi({
   reducerPath: 'filmsApi',

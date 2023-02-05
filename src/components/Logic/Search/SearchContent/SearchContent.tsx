@@ -1,4 +1,4 @@
-import { IMovie } from '../../../../types/IMovie';
+import { IMovie } from '../../../../shared/types/IMovie';
 import { SearchItem } from '../SearchItem/SearchItem';
 import styles from './SearchContent.module.scss';
 
