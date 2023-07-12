@@ -30,7 +30,7 @@ export const DropDown: React.FC<Props> = ({
           className={styles.link}
           onClick={() => setIsDropOpen(!isOpen)}
         >
-          {item.icon} {item.name}
+          <div className={styles.image}>{item.icon}</div> {item.name}
         </Link>
       ))}
     </div>

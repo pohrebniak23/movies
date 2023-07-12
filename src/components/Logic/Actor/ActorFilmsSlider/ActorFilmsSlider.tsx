@@ -11,7 +11,7 @@ export const ActorFilmsSlider: React.FC<Props> = ({ films }) => {
   return (
     <DefaultSlider>
       {films.slice(0, 5).map((film) => (
-        <FilmSliderCard key={film.id} id={film.id} name={film.name} />
+        <FilmSliderCard key={film.id} id={film.id} />
       ))}
     </DefaultSlider>
   );

@@ -1,0 +1,14 @@
+.saved {
+  padding-top: 30px;
+}
+
+.block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+.title {
+  color: var(--primary-color);
+  margin-bottom: 16px;
+}

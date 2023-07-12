@@ -10,7 +10,7 @@
 
 .leftContent {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .rightContent {
@@ -21,14 +21,17 @@
 
 .image {
   width: 100px;
+  min-width: 150px;
+  min-height: 225px;
   margin: 0;
   margin-right: 20px;
+  object-fit: cover;
 }
 
 .info {
   display: flex;
   flex-direction: column;
-  max-width: 500px;
+  max-width: 800px;
 }
 
 .title {
@@ -44,8 +47,9 @@
 
 .description {
   overflow: hidden;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  line-clamp: 8;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   color: rgb(var(--card-text-color));

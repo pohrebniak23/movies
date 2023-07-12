@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import React, { Children, ReactNode } from 'react';
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -33,7 +33,7 @@ export const DefaultSlider = ({ children }: DefaultSliderProps) => {
   const settings = {
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: Children.count(children) < 4 ? Children.count(children) : 4,
     slidesToScroll: 1,
     responsive: [
       {

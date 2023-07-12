@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import { FcLike } from 'react-icons/fc';
-import { BsCheck } from 'react-icons/bs';
+import { SaveToFavoriteBtn } from 'components/Simple/SaveToFavoriteBtn/SaveToFavoriteBtn';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import NotFoundImage from 'shared/assets/not-found-image.png';
 import { IMovie } from '../../../shared/types/IMovie';
-import { Button } from '../../UI/Button/Button';
 import { Rating } from '../Rating/Rating';
 import styles from './CategoryItem.module.scss';
 
@@ -12,17 +11,15 @@ type Props = {
 };
 
 export const CategoryItem: React.FC<Props> = React.memo(({ info }) => {
-  const [isSaved, setIsSaved] = useState(false);
-
-  const saveToFavourite = () => {
-    setIsSaved(!isSaved);
-  };
-
   return (
     <div className={styles.categoryItem}>
       <div className={styles.leftContent}>
         <Link to={`/films/${info.id}`}>
-          <img src={info.poster.url} alt="" className={styles.image} />
+          <img
+            src={info.poster?.url || NotFoundImage}
+            alt=""
+            className={styles.image}
+          />
         </Link>
         <div className={styles.info}>
           <Link to={`/films/${info.id}`}>
@@ -39,13 +36,7 @@ export const CategoryItem: React.FC<Props> = React.memo(({ info }) => {
         <div className={styles.rating}>
           {info.rating.imdb > 0 && <Rating rating={info.rating.imdb} />}
         </div>
-        <Button
-          variant={isSaved ? 'savedBlack' : 'notSavedBlack'}
-          iconLeft={isSaved ? <BsCheck /> : <FcLike />}
-          onClick={saveToFavourite}
-        >
-          {isSaved ? 'Сохранено' : 'Сохранить'}
-        </Button>
+        <SaveToFavoriteBtn id={info.id} />
       </div>
     </div>
   );

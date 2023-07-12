@@ -1,7 +1,6 @@
-import React, { Fragment, useMemo, useState } from 'react';
+import { SaveToFavoriteBtn } from 'components/Simple/SaveToFavoriteBtn/SaveToFavoriteBtn';
+import React, { Fragment, useMemo } from 'react';
 import { AiOutlinePlayCircle } from 'react-icons/ai';
-import { FcLike } from 'react-icons/fc';
-import { BsCheck } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { dateConverter } from '../../../../shared/helpers/dateConverter';
 import { typeConverter } from '../../../../shared/helpers/typeConverter';
@@ -14,12 +13,6 @@ type Props = {
 };
 
 export const SingleFilmInfo: React.FC<Props> = ({ info }) => {
-  const [isSaved, setIsSaved] = useState(false);
-
-  const saveToFavourite = () => {
-    setIsSaved(!isSaved);
-  };
-
   const infoList = useMemo(
     () => [
       {
@@ -65,13 +58,7 @@ export const SingleFilmInfo: React.FC<Props> = ({ info }) => {
             Смотреть
           </Button>
         </Link>
-        <Button
-          variant={isSaved ? 'saved' : 'notSaved'}
-          iconLeft={isSaved ? <BsCheck /> : <FcLike />}
-          onClick={saveToFavourite}
-        >
-          {isSaved ? 'Сохранено' : 'Сохранить'}
-        </Button>
+        <SaveToFavoriteBtn id={info.id} />
       </div>
 
       <h2 className={styles.subtitle}>О {typeConverter(info.typeNumber)}е</h2>

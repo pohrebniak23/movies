@@ -1,13 +1,14 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { ActorPage } from '../../../pages/ActorPage/ActorPage';
+import { CartoonsPage } from '../../../pages/CartoonsPage/CartoonsPage';
 import { FilmsPage } from '../../../pages/FilmsPage/FilmsPage';
 import { HomePage } from '../../../pages/HomePage/HomePage';
 import { NotFound } from '../../../pages/NotFound/NotFound';
-import { WatchFilmPage } from '../../../pages/WatchFilmPage/WatchFilmPage';
 import { SerialsPage } from '../../../pages/SerialsPage/SerialsPage';
-import { CartoonsPage } from '../../../pages/CartoonsPage/CartoonsPage';
 import { SingleFilmPage } from '../../../pages/SingleFilmPage/SingleFilmPage';
-import { ActorPage } from '../../../pages/ActorPage/ActorPage';
+import { WatchFilmPage } from '../../../pages/WatchFilmPage/WatchFilmPage';
+import { SavedFilms } from '../../../pages/SavedFilms/SavedFilms';
 
 export enum RouteNames {
   HOME = '/',
@@ -21,6 +22,7 @@ export enum RouteNames {
   WATCH = '/watch/:id',
   ACTOR = '/actor/:id',
   ACCOUNT = '/account',
+  SAVED_FILMS = '/saved-films',
   SETTINGS = '/settings',
 }
 
@@ -36,6 +38,7 @@ export const AppRouter: React.FC = () => {
       <Route path={RouteNames.SERIALS_ITEM} element={<SingleFilmPage />} />
       <Route path={RouteNames.WATCH} element={<WatchFilmPage />} />
       <Route path={RouteNames.ACTOR} element={<ActorPage />} />
+      <Route path={RouteNames.SAVED_FILMS} element={<SavedFilms />} />
 
       {/* <Route
         path={RouteNames.ACCOUNT}

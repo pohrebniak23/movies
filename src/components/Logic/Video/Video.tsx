@@ -4,7 +4,7 @@ import { filmsApi } from '../../../services/filmsService';
 import styles from './Video.module.scss';
 
 export const Video: React.FC = () => {
-  const { id } = useParams();
+  const { id = '' } = useParams();
   const { data: movie } = filmsApi.useGetFilmByIdQuery(id);
 
   useEffect(() => {

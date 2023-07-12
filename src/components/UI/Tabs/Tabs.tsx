@@ -2,14 +2,14 @@ import React, { ReactNode } from 'react';
 import { Tab, Tabs as TabsContainer, TabList, TabPanel } from 'react-tabs';
 import './Tabs.scss';
 
-type Props = {
+type TabsProps = {
   tabsList: {
     label: string;
     component: ReactNode;
   }[];
 };
 
-export const Tabs: React.FC<Props> = ({ tabsList }) => {
+export const Tabs: React.FC<TabsProps> = ({ tabsList }) => {
   return (
     <TabsContainer>
       <TabList>

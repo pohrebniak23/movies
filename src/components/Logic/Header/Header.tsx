@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import { AiFillHeart } from 'react-icons/ai';
 import { BiSearchAlt } from 'react-icons/bi';
 import { FiMenu } from 'react-icons/fi';
 import { GrClose } from 'react-icons/gr';
@@ -25,6 +26,11 @@ export const Header: React.FC = () => {
         icon: <MdOutlineLocalMovies />,
       },
       { name: 'Мультфильмы', link: RouteNames.CARTOONS, icon: <MdChildCare /> },
+      {
+        name: 'Сохраненные фильмы',
+        link: RouteNames.SAVED_FILMS,
+        icon: <AiFillHeart />,
+      },
     ],
     [],
   );
@@ -54,16 +60,18 @@ export const Header: React.FC = () => {
             <ThemeSwitcher />
 
             <div className={styles.menu}>
-              <BiSearchAlt
-                className={styles.searchIcon}
-                onClick={toogleSearch}
-              />
-              {!isDropOpen && (
-                <FiMenu className={styles.humburger} onClick={toggleDrop} />
-              )}
-              {isDropOpen && (
-                <GrClose className={styles.humburger} onClick={toggleDrop} />
-              )}
+              <div className={styles.menuItems}>
+                <BiSearchAlt
+                  className={styles.searchIcon}
+                  onClick={toogleSearch}
+                />
+                {!isDropOpen && (
+                  <FiMenu className={styles.humburger} onClick={toggleDrop} />
+                )}
+                {isDropOpen && (
+                  <GrClose className={styles.humburger} onClick={toggleDrop} />
+                )}
+              </div>
 
               <DropDown
                 dropDownItems={menuItems}

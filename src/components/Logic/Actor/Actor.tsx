@@ -9,7 +9,7 @@ import styles from './Actor.module.scss';
 import { ActorFilmsSlider } from './ActorFilmsSlider/ActorFilmsSlider';
 
 export const Actor: React.FC = () => {
-  const { id } = useParams();
+  const { id = '' } = useParams();
   const { data: person } = filmsApi.useGetActorByIdQuery(id);
 
   return (

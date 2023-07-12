@@ -1,32 +1,34 @@
 import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
-import { BackBtn } from '../../UI/BackBtn/BackBtn';
-import { Loader } from '../../Simple/Loader/Loader';
-import { SingleFilmInfo } from './SingleFilmInfo/SingleFilmInfo';
-import { Tabs } from '../../UI/Tabs/Tabs';
+import NotFoundImage from 'shared/assets/not-found-image.png';
 import { filmsApi } from '../../../services/filmsService';
-import { SingleFilmActorsSlider } from './SingleFilmActorsSlider/SingleFilmActorsSlider';
+import { Loader } from '../../Simple/Loader/Loader';
+import { BackBtn } from '../../UI/BackBtn/BackBtn';
+import { Tabs } from '../../UI/Tabs/Tabs';
 import styles from './SingleFilm.module.scss';
+import { SingleFilmActorsSlider } from './SingleFilmActorsSlider/SingleFilmActorsSlider';
+import { SingleFilmInfo } from './SingleFilmInfo/SingleFilmInfo';
 
 export const SingleFilm: React.FC = () => {
-  const { id } = useParams();
+  const { id = '' } = useParams();
   const { data: filmData } = filmsApi.useGetFilmByIdQuery(id);
 
-  const tabs = useMemo(
-    () => [
-      {
+  const tabs: any = useMemo(() => {
+    const tabsArray = [
+      filmData?.description && {
         label: 'Описание',
         component: (
           <p className={styles.description}>{filmData?.description}</p>
         ),
       },
-      {
+      filmData?.persons && {
         label: 'Актеры',
         component: <SingleFilmActorsSlider actors={filmData?.persons} />,
       },
-    ],
-    [filmData],
-  );
+    ];
+
+    return tabsArray.filter(Boolean);
+  }, [filmData]);
 
   return (
     <div className="container">
@@ -34,7 +36,13 @@ export const SingleFilm: React.FC = () => {
         <div className={styles.block}>
           <BackBtn />
           <div className={styles.content}>
-            <img src={filmData.poster.url} alt="" className={styles.poster} />
+            <img
+              src={
+                filmData.poster?.url || filmData.backdrop.url || NotFoundImage
+              }
+              alt=""
+              className={styles.poster}
+            />
             <SingleFilmInfo info={filmData} />
           </div>
 
