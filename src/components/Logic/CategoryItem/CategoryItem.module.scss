@@ -66,8 +66,9 @@
   }
 
   .image {
-    width: 60px;
-    height: 90px;
+    width: 100px;
+    min-width: 100px;
+    min-height: 160px;
     object-fit: cover;
     margin-right: 14px;
   }

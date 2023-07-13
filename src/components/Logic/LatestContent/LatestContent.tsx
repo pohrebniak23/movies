@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
+import { IoIosArrowForward } from 'react-icons/io';
 import { filmsApi } from '../../../services/filmsService';
-import { Button } from '../../UI/Button/Button';
 import { Loader } from '../../Simple/Loader/Loader';
-import styles from './LatestContent.module.scss';
+import { Button } from '../../UI/Button/Button';
 import { MListItems } from '../ListItems/ListItems';
+import styles from './LatestContent.module.scss';
 
 type Props = {
+  link: string;
   category: string;
   title: string;
 };
 
-export const LatestContent: React.FC<Props> = ({ category, title }) => {
+export const LatestContent: React.FC<Props> = ({ category, title, link }) => {
   const [limit, setLimit] = useState(8);
   const {
     data: movies,
@@ -32,7 +34,9 @@ export const LatestContent: React.FC<Props> = ({ category, title }) => {
       {movies?.docs && (
         <ListItems>
           <Container>
-            <h2 className={styles.title}>{title}</h2>
+            <h2 className={styles.title}>
+              <a href={`${link}`}>{title}</a> <IoIosArrowForward />
+            </h2>
             <Grid cardsList={movies.docs} />
 
             {isLoading || (isFetching && <Loader height="200px" />)}

@@ -11,14 +11,14 @@ type Props = {
 const customStyles: any = {
   option: (provided: CSSProperties) => ({
     ...provided,
-    fontSize: '14px',
+    fontSize: '16px',
   }),
   control: (provided: CSSProperties) => ({
     ...provided,
     padding: '10px 12px',
     border: '1px solid var(----additional-color)',
     borderRadius: '8px',
-    fontSize: '14px',
+    fontSize: '16px',
   }),
   valueContainer: (provided: CSSProperties) => ({
     ...provided,

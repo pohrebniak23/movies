@@ -1,6 +1,8 @@
-import React from 'react';
+import classNames from 'classnames';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { filmsApi } from '../../../services/filmsService';
+import BannerImage from '../../../shared/assets/banner-bg.jpg';
 import { Button } from '../../UI/Button/Button';
 import styles from './Banner.module.scss';
 
@@ -11,11 +13,16 @@ type Props = {
 
 export const Banner: React.FC<Props> = ({ trailerLink, filmId }) => {
   const { data: film } = filmsApi.useGetFilmByIdQuery(filmId);
+  const [isVideoLoaded, setIsVideoLoaded] = useState<boolean>(false);
 
   return (
     <div className={styles.banner}>
+      <img className={styles.image} src={BannerImage} alt="" />
+
       <video
-        className={styles.video}
+        className={classNames(styles.video, {
+          [styles.videoLoaded]: isVideoLoaded,
+        })}
         width="100%"
         height="100%"
         preload="auto"
@@ -23,6 +30,9 @@ export const Banner: React.FC<Props> = ({ trailerLink, filmId }) => {
         muted
         loop
         playsInline
+        onLoadedData={() => {
+          setIsVideoLoaded(true);
+        }}
       >
         <source src={trailerLink} type="video/mp4" />
         Your browser does not support HTML5 video.

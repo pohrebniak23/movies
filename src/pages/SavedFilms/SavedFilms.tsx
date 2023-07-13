@@ -33,6 +33,10 @@ export const SavedFilms: React.FC = () => {
       <div className={`${styles.block} container`}>
         <h1 className={styles.title}>Сохраненные фильмы</h1>
 
+        {!savedFilmsData.length && (
+          <p className={styles.text}>У вас еще нет сохраненных фильмов</p>
+        )}
+
         {savedFilmsData.map((info) => (
           <CategoryItem info={info} />
         ))}

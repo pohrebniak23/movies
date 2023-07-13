@@ -7,3 +7,9 @@
 .notFound {
   color: var(--bg-color);
 }
+
+@media (max-width: 480px) {
+  .content {
+    max-height: 400px;
+  }
+}
