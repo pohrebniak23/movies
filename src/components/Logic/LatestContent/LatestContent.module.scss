@@ -18,17 +18,17 @@
   font-weight: 700;
   margin-bottom: 24px;
   color: var(--primary-color);
-  display: flex;
-  align-items: center;
 
   a {
     color: var(--primary-color);
-    margin-right: 6px;
-  }
+    display: flex;
+    align-items: center;
 
-  img,
-  svg {
-    transform: translateY(1px);
+    img,
+    svg {
+      margin-left: 6px;
+      transform: translateY(1px);
+    }
   }
 
   @media (max-width: 480px) {

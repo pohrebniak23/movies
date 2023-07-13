@@ -35,7 +35,9 @@ export const LatestContent: React.FC<Props> = ({ category, title, link }) => {
         <ListItems>
           <Container>
             <h2 className={styles.title}>
-              <a href={`${link}`}>{title}</a> <IoIosArrowForward />
+              <a href={`${link}`}>
+                {title} <IoIosArrowForward />
+              </a>
             </h2>
             <Grid cardsList={movies.docs} />
 
